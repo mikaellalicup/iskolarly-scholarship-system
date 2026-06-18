@@ -1,0 +1,11 @@
+{
+    "name": "iskolarly/scholarship-system",
+    "description": "Iskolarly Scholarship Management System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "ext-pdo": "*",
+        "ext-pgsql": "*",
+        "ext-json": "*"
+    }
+}
