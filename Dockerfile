@@ -1,3 +1,4 @@
+cat > Dockerfile << 'EOF'
 FROM php:8.2-apache
 
 # Install system dependencies
@@ -35,3 +36,4 @@ EXPOSE 80
 
 # Start Apache
 CMD ["apache2-foreground"]
+EOF
