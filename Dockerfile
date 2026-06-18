@@ -1,4 +1,4 @@
-echo 'FROM php:8.2-apache
+FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -34,4 +34,4 @@ RUN chown -R www-data:www-data /var/www/html \
 EXPOSE 80
 
 # Start Apache
-CMD ["apache2-foreground"]' > Dockerfile
+CMD ["apache2-foreground"]
