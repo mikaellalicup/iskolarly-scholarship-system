@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notifications | Iskolarly</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-brand"><div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div><div class="brand-text">Iskolarly<span class="sub">Student Portal</span></div></a>
+    <div class="navbar-user"><span class="user-name">{{student.name}}</span><div class="user-avatar">M</div></div>
+  </div>
+</nav>
+<div class="dashboard-layout">
+<aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Main</div>
+      <a href="student-dashboard.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Dashboard</a>
+      <a href="notifications.html" class="sidebar-link active"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>Notifications<span class="badge-count">{{notifications.unreadCount}}</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scholarship</div>
+      <a href="application.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>Apply for Scholarship</a>
+      <a href="renewal.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>Renewal & Compliance</a>
+      <a href="documents.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-icon lucide-folder"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>My Documents</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Account</div>
+      <a href="student-profile.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-user-icon lucide-square-user"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>My Profile</a>
+      <a href="login.html" class="sidebar-link" onclick="return confirm('Are you sure you want to log out?')"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-door-open-icon lucide-door-open"><path d="M11 20H2"/><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"/><path d="M11 4H8a2 2 0 0 0-2 2v14"/><path d="M14 12h.01"/><path d="M22 20h-3"/></svg></span>Log Out</a>
+    </div>
+  </aside>
+  <main class="main-content">
+    <div class="page-hero" style="margin:-32px -32px 32px;border-radius:0;padding:36px 32px 32px;">
+      <div class="eyebrow">Inbox</div>
+      <h1 style="font-size:1.8rem;">Notifications</h1>
+      <p>Updates about your application status, document requests, and scholarship reminders.</p>
+    </div>
+
+    <div class="flex justify-between items-center mb-16 wrap gap-12">
+      <div class="tabs" style="margin-bottom:0;border:none;">
+        <button class="tab-btn active" onclick="filterNotif(this,'all')">All <span class="badge badge-new" style="margin-left:4px;">{{notifications.totalCount}}</span></button>
+        <button class="tab-btn" onclick="filterNotif(this,'unread')">Unread <span class="badge badge-new" style="margin-left:4px;">{{notifications.unreadCount}}</span></button>
+        <button class="tab-btn" onclick="filterNotif(this,'system')">System</button>
+        <button class="tab-btn" onclick="filterNotif(this,'action')">Action Required</button>
+      </div>
+      <button class="btn btn-sm btn-outline" onclick="markAllRead()">✓ Mark All as Read</button>
+    </div>
+
+    <div class="card">
+      <div id="notif-list" style="display:flex;flex-direction:column;">
+
+        <!-- Unread notification -->
+        <div class="notif-item" data-type="action" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);background:rgba(26,50,96,.03);">
+          <div style="width:42px;height:42px;background:var(--warn-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert-icon lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div>
+                <div class="flex items-center gap-8"><strong style="font-size:.9rem;">Renewal Deadline Reminder</strong><span class="notif-dot"></span></div>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;line-height:1.6;">Your renewal requirements for 2nd Semester AY 2025–2026 are due on {{notifications.renewalDeadline}}. You have submitted 2 of 5 required documents. Please complete your submission to avoid interruption of your scholarship.</p>
+                <a href="renewal.html" class="btn btn-sm" style="background:var(--warn);color:var(--white);border-color:var(--warn);margin-top:10px;">Submit Now →</a>
+              </div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">2 days ago</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif-item" data-type="action" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);background:rgba(26,50,96,.03);">
+          <div style="width:42px;height:42px;background:var(--danger-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-alert-icon lucide-circle-alert"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div>
+                <div class="flex items-center gap-8"><strong style="font-size:.9rem;">Document Flagged: Action Required</strong><span class="notif-dot"></span></div>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">Your <strong>Government-Issued ID</strong> has been flagged by the reviewer. Reason: <em>"Image is blurry and illegible."</em> Please upload a clearer version at your earliest convenience.</p>
+                <a href="documents.html" class="btn btn-sm btn-danger" style="margin-top:10px;">Replace Document →</a>
+              </div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[2].date}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif-item" data-type="system" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);background:rgba(26,50,96,.03);">
+          <div style="width:42px;height:42px;background:var(--info-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-megaphone-icon lucide-megaphone"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"/><path d="M8 6v8"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div>
+                <div class="flex items-center gap-8"><strong style="font-size:.9rem;">New Scholarship Program Available</strong><span class="notif-dot"></span></div>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">A new scholarship program, the <strong>{{newScholarship.name}}</strong>, is now open for applications. You may be eligible. Application deadline: {{newScholarship.deadline}}.</p>
+                <a href="application.html" class="btn btn-sm btn-outline" style="margin-top:10px;">View & Apply →</a>
+              </div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[3].date}}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Read notifications -->
+        <div class="notif-item" data-type="system" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);">
+          <div style="width:42px;height:42px;background:var(--success-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div><strong style="font-size:.9rem;">Application Approved</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">Congratulations! Your application for the <strong>{{scholarship.program}}</strong> (Reference: {{application.id}}) has been approved. You are now officially a Iskolarly scholar. Welcome to the program!</p></div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[0].date}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif-item" data-type="system" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);">
+          <div style="width:42px;height:42px;background:var(--info-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div><strong style="font-size:.9rem;">Application Under Evaluation</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">Your application {{application.id}} has passed initial verification and is now under evaluation by the scholarship committee. You will be notified once a decision is made.</p></div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[1].date}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif-item" data-type="system" style="display:flex;gap:16px;padding:20px;border-bottom:1px solid var(--border);">
+          <div style="width:42px;height:42px;background:var(--info-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check-icon lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div><strong style="font-size:.9rem;">Documents Verified</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">Your submitted documents for application {{application.id}} have been reviewed and verified by our staff. Your application will now proceed to the evaluation stage.</p></div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[2].date}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="notif-item" data-type="system" style="display:flex;gap:16px;padding:20px;">
+          <div style="width:42px;height:42px;background:var(--success-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-inbox-icon lucide-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
+          <div style="flex:1;">
+            <div class="flex justify-between items-start gap-8">
+              <div><strong style="font-size:.9rem;">Application Received</strong>
+                <p style="font-size:.85rem;color:var(--muted);margin-top:4px;">Your scholarship application for the {{scholarship.program}} has been successfully received. Reference number: {{application.id}}. Our team will begin reviewing your documents within 2–3 business days.</p></div>
+              <span style="font-size:.75rem;color:var(--muted);white-space:nowrap;">{{notifications.items[4].date}}</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pagination mt-16">
+      <span class="pagination-info">Showing {{notifications.showing}} of {{notifications.totalCount}} notifications</span>
+      <div class="pagination-btns">
+        <button class="page-btn" disabled>‹</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn" disabled>›</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  function filterNotif(btn, type) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.notif-item').forEach(item => {
+      if (type === 'all') item.style.display = 'flex';
+      else if (type === 'unread') item.style.display = item.querySelector('.notif-dot') ? 'flex' : 'none';
+      else item.style.display = item.dataset.type === type ? 'flex' : 'none';
+    });
+  }
+  function markAllRead() {
+    document.querySelectorAll('.notif-dot').forEach(d => d.remove());
+    document.querySelectorAll('.notif-item').forEach(i => i.style.background = '');
+  }
+</script>
+</body>
+</html>

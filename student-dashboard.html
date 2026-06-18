@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard | Iskolarly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-brand">
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <div class="brand-text">Iskolarly<span class="sub">Student Portal</span></div>
+    </a>
+    <div class="navbar-user">
+      <span class="user-name">{{student.name}}</span>
+      <div class="user-avatar" onclick="toggleUserMenu()" title="Account">M</div>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Main</div>
+      <a href="student-dashboard.html" class="sidebar-link active"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Dashboard</a>
+      <a href="notifications.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>Notifications<span class="badge-count">{{notifications.unreadCount}}</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scholarship</div>
+      <a href="application.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>Apply for Scholarship</a>
+      <a href="application.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>Renewal & Compliance</a>
+      <a href="documents.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-icon lucide-folder"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>My Documents</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Account</div>
+      <a href="student-profile.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-user-icon lucide-square-user"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>My Profile</a>
+      <a href="login.html" class="sidebar-link" onclick="return confirm('Are you sure you want to log out?')"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-door-open-icon lucide-door-open"><path d="M11 20H2"/><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"/><path d="M11 4H8a2 2 0 0 0-2 2v14"/><path d="M14 12h.01"/><path d="M22 20h-3"/></svg></span>Log Out</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+    <!-- Welcome banner -->
+    <div class="ribbon-card mb-32" style="padding:28px 28px 28px 36px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);">
+      <div class="flex justify-between items-center wrap gap-16">
+        <div>
+          <p style="color:rgba(255,255,255,.6);font-size:.8rem;margin-bottom:4px;">Welcome back,</p>
+          <h1 style="color:var(--white);font-size:1.5rem;margin-bottom:6px;">{{student.name}}</h1>
+          <p style="color:rgba(255,255,255,.65);font-size:.875rem;">{{student.course}}, {{student.year}} Year &nbsp;·&nbsp; Student ID: {{student.id}}</p>
+        </div>
+        <div style="text-align:right;">
+          <span class="badge badge-gold" style="font-size:.8rem;padding:6px 14px;">{{student.scholarStatus}}</span>
+          <p style="color:rgba(255,255,255,.45);font-size:.75rem;margin-top:8px;">{{scholarship.program}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alert -->
+    <div class="alert alert-warn mb-24">
+      <span class="alert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert-icon lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+      <div><strong>Renewal Deadline:</strong> Submit your renewal requirements for 2nd Semester AY 2025–2026 by <strong>{{scholarship.renewalDeadline}}</strong>. <a href="renewal.html" style="color:var(--warn);font-weight:600;text-decoration:underline;">Submit Now →</a></div>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="grid-4 mb-32">
+      <div class="stat-card">
+        <div class="card-icon gold" style="background:rgba(94, 0, 6, 0.3);width:44px;height:44px;font-size:1.1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list-icon lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+        <div><div class="stat-value">{{stats.applicationCount}}</div><div class="stat-label">Application</div><div class="stat-change up">Approved</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="card-icon green" style="background:rgba(94, 0, 6, 0.3);width:44px;height:44px;font-size:1.1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg></div>
+        <div><div class="stat-value">{{scholarship.termsActive}}</div><div class="stat-label">Terms Active</div><div class="stat-change up">{{scholarship.activeSince}}</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="card-icon navy" style="background:rgba(94, 0, 6, 0.3);width:44px;height:44px;font-size:1.1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet-icon lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
+        <div><div class="stat-value">{{scholarship.stipendShort}}</div><div class="stat-label">Received</div><div class="stat-change up">This Year</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="card-icon blue" style="background:rgba(94, 0, 6, 0.3);width:44px;height:44px;font-size:1.1rem;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-ring-icon lucide-bell-ring"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/></svg></div>
+        <div><div class="stat-value">{{notifications.unreadCount}}</div><div class="stat-label">Unread Alerts</div><div class="stat-change">View All</div></div>
+      </div>
+    </div>
+
+    <div class="grid-2 gap-24">
+      <!-- Application Status -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Application Status</h3>
+          <span class="badge badge-approved">{{application.statusLabel}}</span>
+        </div>
+        <div style="margin-bottom:20px;">
+          <div style="font-size:.8rem;color:var(--muted);">Scholarship Program</div>
+          <div style="font-weight:600;margin-top:2px;">{{scholarship.program}}</div>
+        </div>
+        <div style="margin-bottom:20px;">
+          <div style="font-size:.8rem;color:var(--muted);">Application ID</div>
+          <div style="font-weight:600;font-family:monospace;margin-top:2px;">{{application.id}}</div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-date">{{application.timeline[0].date}}</div>
+            <div class="timeline-title">{{application.timeline[0].label}}</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-date">{{application.timeline[1].date}}</div>
+            <div class="timeline-title">{{application.timeline[1].label}}</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-date">{{application.timeline[2].date}}</div>
+            <div class="timeline-title">{{application.timeline[2].label}}</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-date">{{application.timeline[3].date}}</div>
+            <div class="timeline-title">{{application.timeline[3].label}}</div>
+            <div class="timeline-desc">{{application.timeline[3].desc}}</div>
+          </div>
+        </div>
+        <a href="application.html" class="btn btn-outline w-full mt-24">View Full Application</a>
+      </div>
+
+      <!-- Quick Actions + Notifications -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div class="card">
+          <div class="card-header"><h3>Quick Actions</h3></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <a href="application.html" class="btn btn-outline" style="flex-direction:column;gap:6px;padding:16px;height:auto;text-align:center;">
+              <span style="font-size:1.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>
+              <span style="font-size:.78rem;white-space:normal;">Apply for<br>Scholarship</span>
+            </a>
+            <a href="renewal.html" class="btn btn-outline" style="flex-direction:column;gap:6px;padding:16px;height:auto;text-align:center;">
+              <span style="font-size:1.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
+              <span style="font-size:.78rem;white-space:normal;">Submit<br>Renewal</span>
+            </a>
+            <a href="documents.html" class="btn btn-outline" style="flex-direction:column;gap:6px;padding:16px;height:auto;text-align:center;">
+              <span style="font-size:1.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-icon lucide-folder"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>
+              <span style="font-size:.78rem;white-space:normal;">Upload<br>Documents</span>
+            </a>
+            <a href="notifications.html" class="btn btn-outline" style="flex-direction:column;gap:6px;padding:16px;height:auto;text-align:center;">
+              <span style="font-size:1.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>
+              <span style="font-size:.78rem;white-space:normal;">View<br>Notifications</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Recent Notifications</h3>
+            <a href="notifications.html" style="font-size:.8rem;color:var(--navy);font-weight:600;">View All</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;padding:12px;background:var(--info-bg);border-radius:8px;">
+              <span style="font-size:1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EBB11F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>
+              <div><div style="font-size:.85rem;font-weight:600;">Renewal Reminder</div><div style="font-size:.78rem;color:var(--muted);margin-top:2px;">Submit 2nd Sem renewal by {{scholarship.renewalDeadline}}.</div><div style="font-size:.72rem;color:var(--muted);margin-top:4px;">2 days ago</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;padding:12px;background:var(--success-bg);border-radius:8px;">
+              <span style="font-size:1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d8a41" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check-icon lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div><div style="font-size:.85rem;font-weight:600;">Scholarship Approved</div><div style="font-size:.78rem;color:var(--muted);margin-top:2px;">Your application {{application.id}} has been approved.</div><div style="font-size:.72rem;color:var(--muted);margin-top:4px;">{{application.timeline[3].date}}</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;padding:12px;background:var(--slate);border-radius:8px;border:1px solid var(--border);">
+              <span style="font-size:1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list-icon lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
+              <div><div style="font-size:.85rem;font-weight:600;">{{notifications.recent[2].title}}</div><div style="font-size:.78rem;color:var(--muted);margin-top:2px;">{{notifications.recent[2].message}}</div><div style="font-size:.72rem;color:var(--muted);margin-top:4px;">{{notifications.recent[2].timeAgo}}</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scholarship Details -->
+    <div class="card mt-24">
+      <div class="card-header">
+        <h3>My Scholarship Details</h3>
+        <span class="badge badge-active">{{scholarship.statusLabel}}</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;">
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Program</div><div style="font-weight:600;margin-top:4px;">{{scholarship.program}}</div></div>
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Term Covered</div><div style="font-weight:600;margin-top:4px;">{{scholarship.termCovered}}</div></div>
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Stipend Amount</div><div style="font-weight:600;margin-top:4px;">{{scholarship.stipend}}</div></div>
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Scholar Since</div><div style="font-weight:600;margin-top:4px;">{{scholarship.scholarSince}}</div></div>
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">GPA Requirement</div><div style="font-weight:600;margin-top:4px;">{{scholarship.gpaRequirement}}</div></div>
+        <div><div style="font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Renewal Status</div><div style="font-weight:600;margin-top:4px;color:var(--warn);">⚠ Due {{scholarship.renewalDeadline}}</div></div>
+      </div>
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);">
+        <div style="font-size:.8rem;color:var(--muted);margin-bottom:8px;">GPA Requirement Progress</div>
+        <div class="flex items-center gap-12">
+          <div class="progress-bar" style="flex:1;"><div class="progress-fill" style="width:{{scholarship.gpaProgressPct}}%;"></div></div>
+          <span style="font-size:.8rem;font-weight:600;">{{scholarship.currentGpa}} / {{scholarship.gpaRequirement}} required</span>
+        </div>
+      </div>
+      <div class="flex gap-12 mt-20">
+        <a href="renewal.html" class="btn btn-primary">Submit Renewal Requirements</a>
+        <a href="documents.html" class="btn btn-outline">View My Documents</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  function toggleUserMenu() {
+    const m = document.getElementById('user-menu');
+    m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  }
+  document.addEventListener('click', e => {
+    const menu = document.getElementById('user-menu');
+    if (!e.target.closest('.navbar-user')) menu.style.display = 'none';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account | Iskolarly</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <style>
+    #err-middlename, #err-fathername, #err-fatherocc, #err-mothername, #err-motherocc,
+    #err-phone, #err-email, #err-addr-street, #err-addr-barangay,
+    #err-addr-municipality, #err-addr-province, #err-addr-zip, #err-studentid,
+    #err-course, #err-gpa, #err-units, #err-lastname, #err-firstname {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="" class="navbar-brand">
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <div class="brand-text">Iskolarly</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">← Back to Home</a></li>
+      <li><a href="login.html">Already have an account? Log In</a></li>
+    </ul>
+  </div>
+</nav>
+
+<form id="register-form" novalidate onsubmit="return false;">
+<div style="min-height:calc(100vh - 64px);display:flex;align-items:flex-start;justify-content:center;padding:48px 24px;background:var(--slate);">
+  <div style="width:100%;max-width:760px;">
+
+    <!-- Header -->
+    <div class="text-center mb-32">
+      <div style="width:60px;height:60px;background:var(--navy);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin:0 auto 16px;"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></div>
+      <h1 style="font-size:1.8rem;margin-bottom:6px;">Create Your Account</h1>
+      <p class="text-muted"></p>
+    </div>
+
+    <!-- Progress Steps -->
+    <div style="display:flex;gap:0;margin-bottom:36px;" id="reg-steps">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle active" id="sc1">1</div>
+        <span class="step-label active">Personal Info</span>
+      </div>
+      <div class="step-line" id="sl1"></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle" id="sc2">2</div>
+        <span class="step-label">Account Setup</span>
+      </div>
+      <div class="step-line" id="sl2"></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle" id="sc3">3</div>
+        <span class="step-label">Review & Submit</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: Personal Info -->
+    <div class="card" id="step1">
+      <div class="card-header">
+        <h2>Personal Information</h2>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Last Name <span class="required">*</span></label>
+          <input type="text" class="form-control" id="r-lastname" name="last_name" placeholder="e.g. Santos" maxlength="60" oninput="validateNameField(this)" />
+          <span class="form-error" id="err-lastname">Last name is required.</span>
+        </div>
+        <div class="form-group">
+          <label>First Name <span class="required">*</span></label>
+          <input type="text" class="form-control" id="r-firstname" name="first_name" placeholder="e.g. Maria" maxlength="60" oninput="validateNameField(this)" />
+          <span class="form-error" id="err-firstname">First name is required.</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Middle Name <span class="optional">(optional)</span></label>
+          <input type="text" class="form-control" id="r-middlename" name="middle_name" placeholder="e.g. Cruz" maxlength="60" oninput="validateNameField(this, true)" />
+          <span class="form-error" id="err-middlename">Only letters, spaces, hyphens, and apostrophes allowed.</span>
+        </div>
+        <div class="form-group">
+          <label>Suffix <span class="optional">(optional)</span></label>
+          <select class="form-control" id="r-suffix" name="suffix">
+            <option value="">None</option>
+            <option value="Jr.">Jr.</option><option value="Sr.">Sr.</option><option value="II">II</option><option value="III">III</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date of Birth <span class="required">*</span></label>
+          <input type="date" class="form-control" id="r-dob" name="date_of_birth" />
+          <span class="form-error">Date of birth is required.</span>
+        </div>
+        <div class="form-group">
+          <label>Sex <span class="required">*</span></label>
+          <select class="form-control" id="r-sex" name="sex">
+            <option value="">Select sex</option>
+            <option value="Male">Male</option><option value="Female">Female</option><option value="Prefer not to say">Prefer not to say</option>
+          </select>
+          <span class="form-error">This field is required.</span>
+        </div>
+      </div>
+      <!-- <div class="form-group">
+        <label>Civil Status <span class="required">*</span></label>
+        <select class="form-control" id="r-civil">
+          <option value="">Select status</option>
+          <option>Single</option><option>Married</option><option>Widowed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nationality <span class="required">*</span></label>
+        <input type="text" class="form-control" id="r-nationality" value="Filipino" />
+      </div> -->
+      <div class="form-group">
+        <label>Permanent Address <span class="required">*</span></label>
+        <div class="form-row" style="margin-bottom:8px;display:block;">
+          <div class="form-group" style="margin-bottom:8px;width:100%;">
+            <input type="text" class="form-control" id="r-addr-street" name="addr_street" placeholder="House No., Street" maxlength="100" oninput="validateAddressField(this)" />
+            <span class="form-error" id="err-addr-street">House No. / Street is required.</span>
+          </div>
+        </div>
+        <div class="form-row" style="margin-bottom:8px;">
+          <div class="form-group" style="margin-bottom:8px;">
+            <input type="text" class="form-control" id="r-addr-barangay" name="addr_barangay" placeholder="Barangay" maxlength="80" oninput="validateAddressField(this)" />
+            <span class="form-error" id="err-addr-barangay">Barangay is required.</span>
+          </div>
+          <div class="form-group" style="margin-bottom:8px;">
+            <input type="text" class="form-control" id="r-addr-municipality" name="addr_municipality" placeholder="City / Municipality" maxlength="80" oninput="validateAddressField(this)" />
+            <span class="form-error" id="err-addr-municipality">City / Municipality is required.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:8px;">
+            <input type="text" class="form-control" id="r-addr-province" name="addr_province" placeholder="Province" maxlength="80" oninput="validateAddressField(this)" />
+            <span class="form-error" id="err-addr-province">Province is required.</span>
+          </div>
+          <div class="form-group" style="margin-bottom:8px;">
+            <input type="text" class="form-control" id="r-addr-zip" name="addr_zip" placeholder="Zip Code (4 digits)" maxlength="4" oninput="validateZip(this)" />
+            <span class="form-error" id="err-addr-zip">Zip code must be exactly 4 digits.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Contact Number <span class="required">*</span></label>
+          <input type="tel" class="form-control" id="r-phone" name="contact_number" placeholder="09XX-XXX-XXXX" maxlength="13" oninput="formatPhone(this)" />
+          <span class="form-error" id="err-phone">Valid PH number required (11 digits).</span>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" class="form-control" id="r-email" name="email" placeholder="you@email.com" oninput="validateEmail(this)" onblur="validateEmail(this)" />
+          <span class="form-error" id="err-email">Please enter a valid email address.</span>
+        </div>
+      </div>
+      <div class="flex justify-between mt-24">
+        <div></div>
+        <button type="button" class="btn btn-primary" onclick="goToStep(2)">Next: Account Setup →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Academic Info [Removed] -->
+    <!-- <div class="card" id="step2" style="display:none;">
+      <div class="card-header">
+        <h2>Academic Information</h2>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Student ID Number <span class="required">*</span></label>
+          <input type="text" class="form-control" id="r-studentid" placeholder="e.g. 2021-00123" maxlength="20" />
+        </div>
+        <div class="form-group">
+          <label>School Year Level <span class="required">*</span></label>
+          <select class="form-control" id="r-yearlevel">
+            <option value="">Select level</option>
+            <option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>5th Year</option><option>Graduate</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" id="college-group">
+        <label>College / Faculty <span class="required">*</span></label>
+        <select class="form-control" id="r-college" onchange="handleCollegeChange(this)">
+          <option value="">Select college</option>
+          <option>College of Arts and Sciences</option>
+          <option>College of Business and Accountancy</option>
+          <option>College of Engineering and Technology</option>
+          <option>College of Education</option>
+          <option>College of Computing and Information Sciences</option>
+          <option>College of Health Sciences</option>
+          <option>College of Humanities and Social Sciences</option>
+          <option>College of Law</option>
+          <option>College of Architecture and Fine Arts</option>
+          <option>College of Agriculture and Food Science</option>
+          <option>College of Public Administration and Governance</option>
+          <option>College of Tourism and Hospitality Management</option>
+          <option>Graduate School</option>
+          <option>Open University / Distance Learning</option>
+          <option value="other">Other (Specify)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Degree Program / Course <span class="required">*</span></label>
+        <input type="text" class="form-control" id="r-course" placeholder="e.g. Bachelor of Science in Nursing" oninput="handleDegreeInput(this)" onblur="validateDegreeField(this)" />
+        <span class="form-error" id="err-course">Degree program is required.</span>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Current GPA / GWA <span class="required">*</span></label>
+          <input type="text" class="form-control" id="r-gpa" placeholder="e.g. 1.50" maxlength="4" oninput="validateGPA(this)" />
+          <span class="form-hint">On a 1.0–5.0 scale (1.0 = highest).</span>
+          <span class="form-error" id="err-gpa">GPA must be a number between 1.0 and 5.0.</span>
+        </div>
+        <div class="form-group">
+          <label>Academic Term <span class="required">*</span></label>
+          <select class="form-control">
+            <option value="">Select term</option>
+            <option>1st Semester, AY 2025–2026</option>
+            <option>2nd Semester, AY 2025–2026</option>
+            <option>Summer 2026</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Units Enrolled (Current Term) <span class="required">*</span></label>
+        <input type="text" class="form-control" id="r-units" placeholder="e.g. 21" maxlength="2" oninput="validateUnits(this)" />
+        <span class="form-error" id="err-units">Units must be a number between 1 and 30.</span>
+      </div>
+      <hr class="divider" />
+      <h4 style="margin-bottom:16px;">Family Background</h4>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Father's Full Name</label>
+          <input type="text" class="form-control" id="r-fathername" placeholder="Full name or N/A" maxlength="60" oninput="validateNameField(this, true)" />
+          <span class="form-error" id="err-fathername">Only letters, spaces, hyphens, and apostrophes allowed.</span>
+        </div>
+        <div class="form-group">
+          <label>Father's Occupation</label>
+          <input type="text" class="form-control" id="r-fatherocc" placeholder="e.g. Farmer, N/A" maxlength="60" oninput="validateOccupationField(this, true)" />
+          <span class="form-error" id="err-fatherocc">Only letters, spaces, hyphens, and common punctuation allowed.</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Mother's Full Name</label>
+          <input type="text" class="form-control" id="r-mothername" placeholder="Full name or N/A" maxlength="60" oninput="validateNameField(this, true)" />
+          <span class="form-error" id="err-mothername">Only letters, spaces, hyphens, and apostrophes allowed.</span>
+        </div>
+        <div class="form-group">
+          <label>Mother's Occupation</label>
+          <input type="text" class="form-control" id="r-motherocc" placeholder="e.g. Teacher, N/A" maxlength="60" oninput="validateOccupationField(this, true)" />
+          <span class="form-error" id="err-motherocc">Only letters, spaces, hyphens, and common punctuation allowed.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Estimated Annual Family Income <span class="required">*</span></label>
+        <select class="form-control" id="r-income">
+          <option value="">Select range</option>
+          <option>Below ₱50,000</option>
+          <option>₱50,001 – ₱100,000</option>
+          <option>₱100,001 – ₱250,000</option>
+          <option>₱250,001 – ₱500,000</option>
+          <option>Above ₱500,000</option>
+        </select>
+      </div>
+      <div class="flex justify-between mt-24">
+        <button class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+        <button class="btn btn-primary" onclick="goToStep(3)">Next: Account Setup →</button>
+      </div>
+    </div> -->
+
+    <!-- STEP 2: Account Setup -->
+    <div class="card" id="step2" style="display:none;">
+      <div class="card-header">
+        <h2>Account Setup</h2>
+      </div>
+      <div class="form-group">
+        <label>Username <span class="required">*</span></label>
+        <input type="text" class="form-control" id="r-username" name="username" placeholder="e.g. msantos2021" oninput="checkUsername(this)" />
+        <span class="form-hint">4–20 characters. Letters, numbers, underscores only.</span>
+        <div id="username-status" style="font-size:.78rem;margin-top:5px;"></div>
+      </div>
+      <div class="form-group">
+        <label>Password <span class="required">*</span></label>
+        <div style="position:relative;">
+          <input type="password" class="form-control" id="r-password" name="password" placeholder="Create a strong password" oninput="checkPasswordStrength(this); checkMatch();" style="padding-right:44px;" />
+          <button type="button" id="toggle-pass-btn" onclick="toggleBothPasswords()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);display:flex;align-items:center;"><iconify-icon id="pass-eye-icon" icon="mingcute:eye-close-line" width="20" height="20"></iconify-icon></button>
+        </div>
+        <div id="strength-bar" style="margin-top:8px;display:none;">
+          <div class="progress-bar" style="height:5px;"><div class="progress-fill" id="strength-fill" style="width:0%;"></div></div>
+          <span id="strength-label" style="font-size:.75rem;color:var(--muted);"></span>
+        </div>
+        <ul style="font-size:.78rem;color:var(--muted);margin-top:8px;padding-left:16px;line-height:1.9;">
+          <li id="pc-len">At least 8 characters</li>
+          <li id="pc-upper">At least one uppercase letter</li>
+          <li id="pc-num">At least one number</li>
+          <li id="pc-special">At least one special character</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label>Confirm Password <span class="required">*</span></label>
+        <div style="position:relative;">
+          <input type="password" class="form-control" id="r-confirm" name="password_confirm" placeholder="Re-enter your password" oninput="checkMatch()" style="padding-right:44px;" />
+          <button type="button" id="toggle-confirm-btn" onclick="toggleBothPasswords()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);display:flex;align-items:center;"><iconify-icon id="confirm-eye-icon" icon="mingcute:eye-close-line" width="20" height="20"></iconify-icon></button>
+        </div>
+        <div id="match-status" style="font-size:.78rem;margin-top:5px;"></div>
+      </div>
+      <hr class="divider" />
+      <div class="form-group">
+        <div class="check-group">
+          <input type="checkbox" id="r-terms" name="agree_terms" value="1" />
+          <label for="r-terms">I have read and agree to the <button type="button" onclick="openLegalModal('terms')" style="background:none;border:none;padding:0;color:var(--navy);font-weight:600;cursor:pointer;font-family:inherit;font-size:inherit;text-decoration:underline;">Terms of Service</button> and <button type="button" onclick="openLegalModal('privacy')" style="background:none;border:none;padding:0;color:var(--navy);font-weight:600;cursor:pointer;font-family:inherit;font-size:inherit;text-decoration:underline;">Privacy Policy</button> of Iskolarly. <span class="required">*</span></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="check-group">
+          <input type="checkbox" id="r-data" name="agree_data_privacy" value="1" />
+          <label for="r-data">I consent to the collection and processing of my personal data for scholarship evaluation purposes, in compliance with the Data Privacy Act of 2012 (RA 10173). <span class="required">*</span></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="check-group">
+        </div>
+      </div>
+      <div class="flex justify-between mt-24">
+        <button type="button" class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep(3)">Next: Review →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Review & Submit -->
+    <div class="card" id="step3" style="display:none;">
+      <div class="card-header">
+        <h2>Review Your Information</h2>
+      </div>
+      <div class="alert alert-info mb-24">
+        <span class="alert-icon">ℹ️</span>
+        <div>Please review all your details before submitting. You can go back to make corrections.</div>
+      </div>
+      <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:20px;">
+        <h4 style="margin-bottom:14px;font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Personal Information</h4>
+        <div class="grid-2" style="gap:12px;">
+          <div><span style="font-size:.75rem;color:var(--muted);">Full Name</span><br><strong id="rv-name">—</strong></div>
+          <div><span style="font-size:.75rem;color:var(--muted);">Date of Birth</span><br><strong id="rv-dob">—</strong></div>
+          <div><span style="font-size:.75rem;color:var(--muted);">Contact</span><br><strong id="rv-phone">—</strong></div>
+          <div><span style="font-size:.75rem;color:var(--muted);">Email</span><br><strong id="rv-email">—</strong></div>
+        </div>
+      </div>
+      <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:24px;">
+        <h4 style="margin-bottom:14px;font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;">Account Details</h4>
+        <div class="grid-2" style="gap:12px;">
+          <div><span style="font-size:.75rem;color:var(--muted);">Username</span><br><strong id="rv-username">—</strong></div>
+          <div><span style="font-size:.75rem;color:var(--muted);">Password</span><br><strong>••••••••</strong></div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-8">
+        <button type="button" class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+        <button type="button" class="btn btn-gold btn-lg" onclick="submitRegistration()">✓ Create My Account</button>
+      </div>
+</div>
+</form>
+
+<!-- Privacy Policy Modal -->
+<div id="privacyModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(34,34,34,.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#FCFFFD;border-radius:12px;width:100%;max-width:620px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.18);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 28px 16px;border-bottom:1px solid #CBD5E0;flex-shrink:0;">
+      <div>
+        <div style="display:inline-block;background:rgba(201,168,76,.15);color:#B45309;border:1px solid rgba(201,168,76,.3);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:12px;margin-bottom:6px;">Legal</div>
+        <h2 style="font-size:1.15rem;font-weight:800;color:#360D0E;margin:0;">Privacy Policy</h2>
+      </div>
+      <button type="button" onclick="closeLegalModal('privacy')" style="background:none;border:none;cursor:pointer;color:#888888;padding:4px;border-radius:8px;display:flex;align-items:center;justify-content:center;" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div style="overflow-y:auto;padding:24px 28px;display:flex;flex-direction:column;gap:12px;">
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">1</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">When you sign up, we collect your name, birthday, contact number, email, address, student ID, course, year level, GPA, family background, and income details. We also collect documents you upload and basic session info like your device and browser.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">2</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">We use your information to process your scholarship application, verify eligibility, send you updates and reminders, and let authorized officers review your documents.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">3</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Only you and authorized Iskolarly admins can see your data. We don't sell it or share it with anyone outside the platform, except when the law requires it.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">4</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Your password is encrypted and never stored as plain text. We take reasonable steps to keep your account and data secure. Keep your login credentials private.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">5</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">You have the right to view, correct, or request deletion of your data under the Data Privacy Act of 2012 (RA 10173). Contact us through the platform to do so.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">6</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">We may update this policy from time to time. Continued use of Iskolarly means you accept any changes.</p>
+      </div>
+    </div>
+    <div style="padding:16px 28px;border-top:1px solid #CBD5E0;flex-shrink:0;">
+      <button type="button" onclick="closeLegalModal('privacy')" style="width:100%;padding:11px;background:#360D0E;color:#FCFFFD;border:none;border-radius:8px;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div id="termsModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(34,34,34,.55);backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px;">
+  <div style="background:#FCFFFD;border-radius:12px;width:100%;max-width:620px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.18);">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 28px 16px;border-bottom:1px solid #CBD5E0;flex-shrink:0;">
+      <div>
+        <div style="display:inline-block;background:rgba(201,168,76,.15);color:#B45309;border:1px solid rgba(201,168,76,.3);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 12px;border-radius:12px;margin-bottom:6px;">Legal</div>
+        <h2 style="font-size:1.15rem;font-weight:800;color:#360D0E;margin:0;">Terms of Use</h2>
+      </div>
+      <button type="button" onclick="closeLegalModal('terms')" style="background:none;border:none;cursor:pointer;color:#888888;padding:4px;border-radius:8px;display:flex;align-items:center;justify-content:center;" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <div style="overflow-y:auto;padding:24px 28px;display:flex;flex-direction:column;gap:12px;">
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">1</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Iskolarly is for students applying for scholarships and admins managing them. By signing up, you agree to use the platform only for its intended purpose.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">2</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">You're responsible for keeping your account secure and making sure all the information you provide is accurate and truthful.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">3</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Only upload real, unaltered documents. Submitting fake or falsified files is grounds for immediate disqualification and may lead to legal consequences.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">4</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Active scholars must maintain their GPA, carry the minimum unit load, and submit renewal documents on time. Failing to meet these requirements may affect your scholarship status.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">5</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">Don't try to access other people's accounts, tamper with the system, or upload harmful files. Misuse of the platform will result in suspension or permanent removal of your account.</p>
+      </div>
+      <div style="background:#F4F7F5;border:1px solid #CBD5E0;border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex-shrink:0;width:32px;height:32px;background:#360D0E;color:#FCFFFD;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;">6</div>
+        <p style="font-size:.875rem;color:#222222;line-height:1.75;">We may update these terms from time to time. Continuing to use Iskolarly after updates means you accept the new terms.</p>
+      </div>
+    </div>
+    <div style="padding:16px 28px;border-top:1px solid #CBD5E0;flex-shrink:0;">
+      <button type="button" onclick="closeLegalModal('terms')" style="width:100%;padding:11px;background:#360D0E;color:#FCFFFD;border:none;border-radius:12px;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal" style="display:none;">
+  <div class="modal">
+    <div class="modal-body text-center" style="padding:48px 32px;">
+      <div style="font-size:3rem;margin-bottom:16px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-party-popper-icon lucide-party-popper"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg></div>
+      <h2 style="font-size:1.5rem;margin-bottom:8px;">Account Created!</h2>
+      <p style="color:var(--muted);margin-bottom:8px;">Your account has been successfully registered.</p>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:28px;">A verification link has been sent to your email address. Please verify your account before logging in.</p>
+      <a href="login.html" class="btn btn-primary btn-lg w-full">Proceed to Login →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentStep = 1;
+
+  function goToStep(n) {
+    if (n > currentStep && !validateStep(currentStep)) return;
+    document.getElementById('step' + currentStep).style.display = 'none';
+    currentStep = n;
+    document.getElementById('step' + n).style.display = 'block';
+    updateStepIndicators();
+    if (n === 3) fillReview();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(s) {
+    let valid = true;
+    if (s === 1) {
+      // Required name fields
+      ['r-lastname', 'r-firstname'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim() || !validateNameField(el)) valid = false;
+      });
+      // DOB
+      const dob = document.getElementById('r-dob');
+      if (!dob.value) { dob.classList.add('error'); valid = false; } else dob.classList.remove('error');
+      // Email
+      if (!validateEmail(document.getElementById('r-email'))) valid = false;
+      // Phone
+      const phone = document.getElementById('r-phone');
+      const digits = phone.value.replace(/\D/g, '');
+      if (digits.length !== 11 || !digits.startsWith('09')) {
+        phone.classList.add('error');
+        const errEl = document.getElementById('err-phone');
+        if (errEl) errEl.style.display = 'block';
+        valid = false;
+      }
+      // Address sub-fields
+      ['r-addr-street','r-addr-barangay','r-addr-municipality','r-addr-province'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) { el.classList.add('error'); valid = false; }
+      });
+      // Zip
+      const zip = document.getElementById('r-addr-zip');
+      if (!/^\d{4}$/.test(zip.value)) {
+        zip.classList.add('error');
+        const errEl = document.getElementById('err-addr-zip');
+        if (errEl) errEl.style.display = 'block';
+        valid = false;
+      }
+    }
+    if (s === 2) {
+      const terms = document.getElementById('r-terms');
+      const data  = document.getElementById('r-data');
+      if (!terms.checked || !data.checked) {
+        alert('You must accept the Terms of Service and Data Privacy Consent to continue.');
+        valid = false;
+      }
+      const p = document.getElementById('r-password').value;
+      const c = document.getElementById('r-confirm').value;
+      if (p !== c) { alert('Passwords do not match.'); valid = false; }
+    }
+    return valid;
+  }
+
+  function updateStepIndicators() {
+    for (let i = 1; i <= 3; i++) {
+      const circle = document.getElementById('sc'+i);
+      const label  = circle.nextElementSibling;
+      circle.className = 'step-circle';
+      label && label.classList.remove('active','done');
+      if (i < currentStep) { circle.classList.add('done'); circle.textContent = '✓'; if (label) label.classList.add('done'); }
+      else if (i === currentStep) { circle.classList.add('active'); circle.textContent = i; if (label) label.classList.add('active'); }
+      else { circle.textContent = i; }
+    }
+    for (let i = 1; i <= 3; i++) {
+      const line = document.getElementById('sl'+i);
+      if (line) line.className = 'step-line' + (i < currentStep ? ' done' : '');
+    }
+  }
+
+  function fillReview() {
+    const get = id => document.getElementById(id)?.value || '—';
+    const middleName = get('r-middlename') !== '—' ? ' ' + get('r-middlename') : '';
+    document.getElementById('rv-name').textContent = [get('r-firstname'), middleName, get('r-lastname')].join(' ').replace(/\s+/g,' ').trim();
+    document.getElementById('rv-dob').textContent  = get('r-dob');
+    document.getElementById('rv-phone').textContent = get('r-phone');
+    document.getElementById('rv-email').textContent = get('r-email');
+    document.getElementById('rv-username').textContent = get('r-username');
+  }
+
+  function checkUsername(el) {
+    const val = el.value;
+    const ok  = /^[a-zA-Z0-9_]{4,20}$/.test(val);
+    const status = document.getElementById('username-status');
+    status.textContent = val ? (ok ? '✓ Username is available.' : '✗ Invalid format.') : '';
+    status.style.color = ok ? 'var(--success)' : 'var(--danger)';
+  }
+
+  function checkPasswordStrength(el) {
+    const v = el.value;
+    const checks = [v.length >= 8, /[A-Z]/.test(v), /[0-9]/.test(v), /[^A-Za-z0-9]/.test(v)];
+    const score   = checks.filter(Boolean).length;
+    const labels  = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+    const colors  = ['', 'var(--danger)', 'var(--warn)', '#3A8FD4', 'var(--success)'];
+    const pcts    = ['0%', '25%', '50%', '75%', '100%'];
+    document.getElementById('strength-bar').style.display = v ? 'block' : 'none';
+    document.getElementById('strength-fill').style.width  = pcts[score];
+    document.getElementById('strength-fill').style.background = colors[score];
+    document.getElementById('strength-label').textContent = v ? labels[score] : '';
+    ['pc-len','pc-upper','pc-num','pc-special'].forEach((id, i) => {
+      document.getElementById(id).style.color = checks[i] ? 'var(--success)' : 'var(--muted)';
+    });
+  }
+
+  function checkMatch() {
+    const p = document.getElementById('r-password').value;
+    const c = document.getElementById('r-confirm').value;
+    const el = document.getElementById('match-status');
+    if (!c) { el.textContent = ''; return; }
+    el.textContent = p === c ? '✓ Passwords match.' : '✗ Passwords do not match.';
+    el.style.color = p === c ? 'var(--success)' : 'var(--danger)';
+  }
+
+  // ── Password visibility toggle (both fields, single button) ──────────────
+  let passwordsVisible = false;
+  function toggleBothPasswords() {
+    passwordsVisible = !passwordsVisible;
+    const type = passwordsVisible ? 'text' : 'password';
+    const icon = passwordsVisible ? 'mingcute:eye-line' : 'mingcute:eye-close-line';
+    document.getElementById('r-password').type = type;
+    document.getElementById('r-confirm').type = type;
+    document.getElementById('pass-eye-icon').setAttribute('icon', icon);
+    document.getElementById('confirm-eye-icon').setAttribute('icon', icon);
+  }
+
+  // ── Name field validation ─────────────────────────────────────────────────
+  // optional=true means validate only if field has content
+  function validateNameField(el, optional = false) {
+    const val = el.value;
+    const errId = 'err-' + el.id.replace('r-', '');
+    const errEl = document.getElementById(errId);
+    if (optional && !val.trim()) {
+      el.classList.remove('error');
+      if (errEl) errEl.style.display = 'none';
+      return true;
+    }
+    // Allow letters (including accented), spaces, hyphens, apostrophes, periods (for suffixes like Jr.)
+    const valid = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'\-\.]+$/.test(val) && val.trim().length > 0;
+    el.classList.toggle('error', !valid);
+    if (errEl) {
+      errEl.textContent = val.trim().length === 0 ? (el.id.replace('r-','').replace('name','') + ' name is required.') : 'Only letters, spaces, hyphens, and apostrophes are allowed.';
+      errEl.style.display = valid ? 'none' : 'block';
+    }
+    return valid;
+  }
+
+  // ── Occupation field validation ───────────────────────────────────────────
+  function validateOccupationField(el, optional = false) {
+    const val = el.value;
+    const errId = 'err-' + el.id.replace('r-', '');
+    const errEl = document.getElementById(errId);
+    if (optional && !val.trim()) {
+      el.classList.remove('error');
+      if (errEl) errEl.style.display = 'none';
+      return true;
+    }
+    const valid = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'\-\.,\/]+$/.test(val) && val.trim().length > 0;
+    el.classList.toggle('error', !valid);
+    if (errEl) errEl.style.display = valid ? 'none' : 'block';
+    return valid;
+  }
+
+  // ── Phone number formatter: 0900 000 0000 ────────────────────────────────
+  function formatPhone(el) {
+    let digits = el.value.replace(/\D/g, '').slice(0, 11);
+    let formatted = digits;
+    if (digits.length > 4 && digits.length <= 7) {
+      formatted = digits.slice(0, 4) + ' ' + digits.slice(4);
+    } else if (digits.length > 7) {
+      formatted = digits.slice(0, 4) + ' ' + digits.slice(4, 7) + ' ' + digits.slice(7);
+    }
+    el.value = formatted;
+    const errEl = document.getElementById('err-phone');
+    const valid = digits.length === 11 && digits.startsWith('09');
+    el.classList.toggle('error', el.value.length > 0 && !valid);
+    if (errEl) errEl.style.display = (el.value.length > 0 && !valid) ? 'block' : 'none';
+  }
+
+  // ── Email validation ──────────────────────────────────────────────────────
+  function validateEmail(el) {
+    const val = el.value.trim();
+    const errEl = document.getElementById('err-email');
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    el.classList.toggle('error', val.length > 0 && !valid);
+    if (errEl) errEl.style.display = (val.length > 0 && !valid) ? 'block' : 'none';
+    return valid;
+  }
+
+  // ── Address field validation ──────────────────────────────────────────────
+  function validateAddressField(el) {
+    const val = el.value.trim();
+    const errId = 'err-' + el.id.replace('r-addr-', 'addr-');
+    const errEl = document.getElementById(errId);
+    const valid = val.length > 0;
+    el.classList.toggle('error', !valid);
+    if (errEl) errEl.style.display = valid ? 'none' : 'block';
+    return valid;
+  }
+
+  // ── Zip Code validation ───────────────────────────────────────────────────
+  function validateZip(el) {
+    el.value = el.value.replace(/\D/g, '').slice(0, 4);
+    const errEl = document.getElementById('err-addr-zip');
+    const valid = /^\d{4}$/.test(el.value);
+    el.classList.toggle('error', el.value.length > 0 && !valid);
+    if (errEl) errEl.style.display = (el.value.length > 0 && !valid) ? 'block' : 'none';
+  }
+
+  // ── Student ID validation ─────────────────────────────────────────────────
+  function validateStudentID(el) {
+    const val = el.value.trim();
+    const errEl = document.getElementById('err-studentid');
+    // Format: YYYY-NNNNN (year dash digits)
+    const valid = /^\d{4}-\d{3,6}$/.test(val);
+    el.classList.toggle('error', val.length > 0 && !valid);
+    if (errEl) errEl.style.display = (val.length > 0 && !valid) ? 'block' : 'none';
+  }
+
+  // ── College / Faculty: transform select ↔ text input ─────────────────────
+  function handleCollegeChange(sel) {
+    if (sel.value === 'other') {
+      const group = document.getElementById('college-group');
+      const label = group.querySelector('label');
+      // Replace select with text input
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'form-control';
+      input.id = 'r-college';
+      input.placeholder = 'Please specify your college / faculty';
+      input.maxLength = 100;
+      input.setAttribute('data-was-other', 'true');
+      input.addEventListener('blur', function() {
+        if (!this.value.trim()) revertCollegeToSelect();
+      });
+      sel.replaceWith(input);
+      input.focus();
+    }
+  }
+
+  function revertCollegeToSelect() {
+    const group = document.getElementById('college-group');
+    const existing = document.getElementById('r-college');
+    if (!existing || existing.tagName !== 'INPUT') return;
+    const sel = document.createElement('select');
+    sel.className = 'form-control';
+    sel.id = 'r-college';
+    sel.onchange = function() { handleCollegeChange(this); };
+    const options = [
+      ['', 'Select college'],
+      ['College of Arts and Sciences', 'College of Arts and Sciences'],
+      ['College of Business and Accountancy', 'College of Business and Accountancy'],
+      ['College of Engineering and Technology', 'College of Engineering and Technology'],
+      ['College of Education', 'College of Education'],
+      ['College of Computing and Information Sciences', 'College of Computing and Information Sciences'],
+      ['College of Health Sciences', 'College of Health Sciences'],
+      ['College of Humanities and Social Sciences', 'College of Humanities and Social Sciences'],
+      ['College of Law', 'College of Law'],
+      ['College of Architecture and Fine Arts', 'College of Architecture and Fine Arts'],
+      ['College of Agriculture and Food Science', 'College of Agriculture and Food Science'],
+      ['College of Public Administration and Governance', 'College of Public Administration and Governance'],
+      ['College of Tourism and Hospitality Management', 'College of Tourism and Hospitality Management'],
+      ['Graduate School', 'Graduate School'],
+      ['Open University / Distance Learning', 'Open University / Distance Learning'],
+      ['other', 'Other (Specify)'],
+    ];
+    options.forEach(([val, text]) => {
+      const opt = document.createElement('option');
+      opt.value = val; opt.textContent = text;
+      sel.appendChild(opt);
+    });
+    existing.replaceWith(sel);
+  }
+
+  // ── Degree Program smart prefix ───────────────────────────────────────────
+  function handleDegreeInput(el) {
+    const value = el.value;
+    if (value === 'b' || value === 'B') {
+      el.value = 'Bachelor in ';
+    } else if (value === 'd' || value === 'D') {
+      el.value = 'Diploma in ';
+    } else if (value === 'm' || value === 'M') {
+      el.value = 'Master in ';
+    } else if (value === 'p' || value === 'P') {
+      el.value = 'Doctor of Philosophy in ';
+    }
+    validateDegreeField(el);
+  }
+
+  function validateDegreeField(el) {
+    const val = el.value.trim();
+    const errEl = document.getElementById('err-course');
+    const valid = val.length >= 5;
+    el.classList.toggle('error', val.length > 0 && !valid);
+    if (errEl) errEl.style.display = (val.length > 0 && !valid) ? 'block' : 'none';
+    return valid;
+  }
+
+  // ── GPA validation ────────────────────────────────────────────────────────
+  function validateGPA(el) {
+    // Only allow digits and one decimal point
+    el.value = el.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');
+    const val = parseFloat(el.value);
+    const errEl = document.getElementById('err-gpa');
+    const valid = !isNaN(val) && val >= 1.0 && val <= 5.0;
+    el.classList.toggle('error', el.value.length > 0 && !valid);
+    if (errEl) errEl.style.display = (el.value.length > 0 && !valid) ? 'block' : 'none';
+  }
+
+  // ── Units Enrolled validation ─────────────────────────────────────────────
+  function validateUnits(el) {
+    el.value = el.value.replace(/\D/g, '').slice(0, 2);
+    const val = parseInt(el.value, 10);
+    const errEl = document.getElementById('err-units');
+    const valid = !isNaN(val) && val >= 1 && val <= 30;
+    el.classList.toggle('error', el.value.length > 0 && !valid);
+    if (errEl) errEl.style.display = (el.value.length > 0 && !valid) ? 'block' : 'none';
+  }
+
+  function openLegalModal(type) {
+    const id = type === 'privacy' ? 'privacyModal' : 'termsModal';
+    document.getElementById(id).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLegalModal(type) {
+    const id = type === 'privacy' ? 'privacyModal' : 'termsModal';
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLegalModal('privacy');
+      closeLegalModal('terms');
+    }
+  });
+  document.getElementById('privacyModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLegalModal('privacy');
+  });
+  document.getElementById('termsModal').addEventListener('click', function(e) {
+    if (e.target === this) closeLegalModal('terms');
+  });
+
+  function submitRegistration() {
+    if (!validateStep(2)) return;
+    document.getElementById('successModal').style.display = 'flex';
+  }
+</script>
+</body>
+</html>

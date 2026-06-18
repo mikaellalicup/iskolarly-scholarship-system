@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholarship Application | Iskolarly</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-brand">
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <div class="brand-text">Iskolarly<span class="sub">Student Portal</span></div>
+    </a>
+    <div class="navbar-user">
+      <span class="user-name">Maria Santos</span>
+      <div class="user-avatar">M</div>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Main</div>
+      <a href="student-dashboard.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Dashboard</a>
+      <a href="notifications.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-icon lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></span>Notifications<span class="badge-count">3</span></a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Scholarship</div>
+      <a href="application.html" class="sidebar-link active"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></span>Apply for Scholarship</a>
+      <a href="renewal.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>Renewal & Compliance</a>
+      <a href="documents.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-icon lucide-folder"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg></span>My Documents</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Account</div>
+      <a href="student-profile.html" class="sidebar-link"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-user-icon lucide-square-user"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></span>My Profile</a>
+      <a href="login.html" class="sidebar-link" onclick="return confirm('Are you sure you want to log out?')"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-door-open-icon lucide-door-open"><path d="M11 20H2"/><path d="M11 4.562v16.157a1 1 0 0 0 1.242.97L19 20V5.562a2 2 0 0 0-1.515-1.94l-4-1A2 2 0 0 0 11 4.561z"/><path d="M11 4H8a2 2 0 0 0-2 2v14"/><path d="M14 12h.01"/><path d="M22 20h-3"/></svg></span>Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-hero" style="margin:-32px -32px 32px;border-radius:0;padding:36px 32px 32px;">
+      <div style= "border-radius: 8px;" class="eyebrow">Scholarship Application</div>
+      <h1 style="font-size:1.8rem;">Apply for a Scholarship</h1>
+      <p>Complete all required fields and upload the necessary documents. Incomplete applications will not be processed.</p>
+    </div>
+
+    <!-- Step indicator -->
+    <div style="display:flex;gap:0;margin-bottom:32px;background:var(--white);border-radius:var(--radius-lg);padding:20px 24px;box-shadow:var(--shadow);">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle active" id="sc1">1</div>
+        <span class="step-label active" style="font-size:.7rem;">Choose Program</span>
+      </div>
+      <div class="step-line" id="sl1"></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle" id="sc2">2</div>
+        <span class="step-label" style="font-size:.7rem;">Application Form</span>
+      </div>
+      <div class="step-line" id="sl2"></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle" id="sc3">3</div>
+        <span class="step-label" style="font-size:.7rem;">Upload Documents</span>
+      </div>
+      <div class="step-line" id="sl3"></div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div class="step-circle" id="sc4">4</div>
+        <span class="step-label" style="font-size:.7rem;">Review & Submit</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: Choose Program -->
+    <div id="step1">
+      <div class="card mb-24">
+        <div class="card-header"><h2>Select Scholarship Program</h2><span class="badge badge-gold">Step 1 of 4</span></div>
+        <p class="text-muted mb-24" style="font-size:.9rem;">Choose the scholarship program you wish to apply for. You may only submit one application per program per academic year.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;" id="program-list">
+          <div class="ribbon-card program-option" data-id="1" onclick="selectProgram(this)" style="padding:20px 20px 20px 28px;cursor:pointer;border:2px solid transparent;transition:border-color .2s;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div class="flex items-start gap-14">
+                <input type="radio" name="program" value="1" style="margin-top:3px;accent-color:var(--navy);" />
+                <div>
+                  <h4 style="margin-bottom:4px;">Scholarship #1</h4>
+                  <p style="font-size:.85rem;color:var(--muted);margin-bottom:10px;">Scholarship program description is displayed here.</p>
+                  <div class="flex gap-8 wrap">
+                    <span class="badge badge-active">Availability</span>
+                    <span class="badge badge-gold">₱0 / yr</span>
+                    <span class="badge badge-review"># slots</span>
+                  </div>
+                </div>
+              </div>
+              <div style="text-align:right;flex-shrink:0;">
+                <div style="font-size:.75rem;color:var(--muted);">Deadline</div>
+                <div style="font-weight:600;font-size:.875rem;">January 1, 2067</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ribbon-card program-option" data-id="2" onclick="selectProgram(this)" style="padding:20px 20px 20px 28px;cursor:pointer;border:2px solid transparent;transition:border-color .2s;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div class="flex items-start gap-14">
+                <input type="radio" name="program" value="2" style="margin-top:3px;accent-color:var(--navy);" />
+                <div>
+                  <h4 style="margin-bottom:4px;">Scholarship #2</h4>
+                  <p style="font-size:.85rem;color:var(--muted);margin-bottom:10px;">Scholarship program description is displayed here.</p>
+                  <div class="flex gap-8 wrap">
+                    <span class="badge badge-active">Availability</span>
+                    <span class="badge badge-gold">₱0 / yr</span>
+                    <span class="badge badge-review"># slots</span>
+                  </div>
+                </div>
+              </div>
+              <div style="text-align:right;flex-shrink:0;">
+                <div style="font-size:.75rem;color:var(--muted);">Deadline</div>
+                <div style="font-weight:600;font-size:.875rem;">January 1, 2067</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ribbon-card program-option" data-id="3" onclick="selectProgram(this)" style="padding:20px 20px 20px 28px;cursor:pointer;border:2px solid transparent;transition:border-color .2s;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div class="flex items-start gap-14">
+                <input type="radio" name="program" value="3" style="margin-top:3px;accent-color:var(--navy);" />
+                <div>
+                  <h4 style="margin-bottom:4px;"> Scholarship #3</h4>
+                  <p style="font-size:.85rem;color:var(--muted);margin-bottom:10px;">Scholarship program description is displayed here.</p>
+                  <div class="flex gap-8 wrap">
+                    <span class="badge badge-active">Availability</span>
+                    <span class="badge badge-gold">₱0 / yr</span>
+                    <span class="badge badge-review"># slots</span>
+                  </div>
+                </div>
+              </div>
+              <div style="text-align:right;flex-shrink:0;">
+                <div style="font-size:.75rem;color:var(--muted);">Deadline</div>
+                <div style="font-weight:600;font-size:.875rem;">January 1, 2067</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="program-err" class="alert alert-danger mt-16" style="display:none;">
+          <span class="alert-icon">⚠️</span><div>Please select a scholarship program to continue.</div>
+        </div>
+        <div class="flex justify-end mt-24">
+          <button class="btn btn-primary" onclick="goToStep(2)">Next: Application Form →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2: Application Form -->
+    <div id="step2" style="display:none;">
+      <div class="card mb-24">
+        <div class="card-header"><h2>Application Form</h2><span class="badge badge-gold">Step 2 of 4</span></div>
+        <div class="alert alert-info mb-24">
+          <span class="alert-icon">ℹ️</span>
+          <div>Your personal and academic information has been pre-filled from your profile. Please review and update if necessary.</div>
+        </div>
+
+        <h4 style="margin-bottom:16px;font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">A. Personal Information</h4>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name <span class="required">*</span></label><input type="text" class="form-control" value="Santos, Maria C." /></div>
+          <div class="form-group"><label>Date of Birth <span class="required">*</span></label><input type="date" class="form-control" value="2002-04-15" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Contact Number <span class="required">*</span></label><input type="tel" class="form-control" value="09123456789" /></div>
+          <div class="form-group"><label>Email Address <span class="required">*</span></label><input type="email" class="form-control" value="msantos@school.edu.ph" /></div>
+        </div>
+        <div class="form-group"><label>Permanent Address <span class="required">*</span></label><input type="text" class="form-control" value="123 Rizal St., Brgy. San Jose, Angono, Rizal" /></div>
+
+        <hr class="divider" />
+        <h4 style="margin-bottom:16px;font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">B. Academic Information</h4>
+        <div class="form-row">
+          <div class="form-group"><label>Student ID <span class="required">*</span></label><input type="text" class="form-control" value="2021-00123" /></div>
+          <div class="form-group"><label>Year Level <span class="required">*</span></label><select class="form-control"><option>3rd Year</option></select></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>College <span class="required">*</span></label><input type="text" class="form-control" value="College of Nursing and Health Sciences" /></div>
+          <div class="form-group"><label>Degree Program <span class="required">*</span></label><input type="text" class="form-control" value="Bachelor of Science in Nursing" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Current GPA / GWA <span class="required">*</span></label><input type="number" class="form-control" value="1.45" step="0.01" /><span class="form-hint">On a 1.0–5.0 scale. 1.0 = highest.</span></div>
+          <div class="form-group"><label>Units Enrolled <span class="required">*</span></label><input type="number" class="form-control" value="21" /></div>
+        </div>
+        <div class="form-group"><label>Academic Term Applying For <span class="required">*</span></label>
+          <select class="form-control"><option>1st Semester, AY 2025–2026</option><option>2nd Semester, AY 2025–2026</option></select>
+        </div>
+
+        <hr class="divider" />
+        <h4 style="margin-bottom:16px;font-size:.9rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;">C. Family & Financial Background</h4>
+        <div class="form-row">
+          <div class="form-group"><label>Father's Name</label><input type="text" class="form-control" placeholder="Full name or N/A" /></div>
+          <div class="form-group"><label>Father's Occupation</label><input type="text" class="form-control" placeholder="Occupation or N/A" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Mother's Name</label><input type="text" class="form-control" placeholder="Full name or N/A" /></div>
+          <div class="form-group"><label>Mother's Occupation</label><input type="text" class="form-control" placeholder="Occupation or N/A" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>No. of Siblings <span class="required">*</span></label><input type="number" class="form-control" min="0" placeholder="0" /></div>
+          <div class="form-group"><label>Annual Family Income <span class="required">*</span></label>
+            <select class="form-control"><option>Below ₱50,000</option><option selected>₱50,001 – ₱100,000</option><option>₱100,001 – ₱250,000</option><option>₱250,001 – ₱500,000</option><option>Above ₱500,000</option></select>
+          </div>
+        </div>
+        <div class="form-group"><label>Are you currently receiving any other scholarship or financial aid?</label>
+          <div class="flex gap-24 mt-8">
+            <div class="check-group"><input type="radio" name="other-schol" value="no" id="os-no" checked /><label for="os-no">No</label></div>
+            <div class="check-group"><input type="radio" name="other-schol" value="yes" id="os-yes" /><label for="os-yes">Yes (please specify below)</label></div>
+          </div>
+        </div>
+        <div class="form-group"><label>Other Scholarship Details <span class="optional">(if yes)</span></label><input type="text" class="form-control" placeholder="Name of scholarship / grant" /></div>
+
+        <div class="flex justify-between mt-24">
+          <button class="btn btn-outline" onclick="goToStep(1)">← Back</button>
+          <button class="btn btn-primary" onclick="goToStep(3)">Next: Upload Documents →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: Upload Documents -->
+    <div id="step3" style="display:none;">
+      <div class="card mb-24">
+        <div class="card-header"><h2>Upload Required Documents</h2><span class="badge badge-gold">Step 3 of 4</span></div>
+        <div class="alert alert-warn mb-24">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>Accepted formats:</strong> PDF, JPG, PNG · <strong>Max file size:</strong> 5MB per file · All documents must be clear and legible.</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <!-- Doc items -->
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">📄 Certified True Copy of Grades <span class="required">*</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">Latest official grades issued and signed by the Registrar.</p></div>
+              <span class="badge badge-pending" id="doc1-status">Not Uploaded</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc1').click()" id="area1">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">PDF, JPG, PNG up to 5MB</p>
+            </div>
+            <input type="file" id="doc1" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'area1','doc1-status','flist1')" />
+            <div class="file-list" id="flist1"></div>
+          </div>
+
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">📄 Certificate of Enrollment / Registration Form <span class="required">*</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">Current term enrollment certificate from the Registrar's Office.</p></div>
+              <span class="badge badge-pending" id="doc2-status">Not Uploaded</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc2').click()" id="area2">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">PDF, JPG, PNG up to 5MB</p>
+            </div>
+            <input type="file" id="doc2" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'area2','doc2-status','flist2')" />
+            <div class="file-list" id="flist2"></div>
+          </div>
+
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">📄 Proof of Household Income <span class="required">*</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">ITR, Certificate of Indigency, or barangay-certified income document.</p></div>
+              <span class="badge badge-pending" id="doc3-status">Not Uploaded</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc3').click()" id="area3">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">PDF, JPG, PNG up to 5MB</p>
+            </div>
+            <input type="file" id="doc3" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'area3','doc3-status','flist3')" />
+            <div class="file-list" id="flist3"></div>
+          </div>
+
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">🪪 Government-Issued ID <span class="required">*</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">PhilSys, UMID, Passport, or any valid government ID (front & back).</p></div>
+              <span class="badge badge-pending" id="doc4-status">Not Uploaded</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc4').click()" id="area4">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">PDF, JPG, PNG up to 5MB</p>
+            </div>
+            <input type="file" id="doc4" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" onchange="handleFile(this,'area4','doc4-status','flist4')" />
+            <div class="file-list" id="flist4"></div>
+          </div>
+
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">📸 2×2 ID Photo <span class="required">*</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">Recent, white background, formal attire.</p></div>
+              <span class="badge badge-pending" id="doc5-status">Not Uploaded</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc5').click()" id="area5">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">JPG, PNG up to 2MB</p>
+            </div>
+            <input type="file" id="doc5" style="display:none;" accept=".jpg,.jpeg,.png" onchange="handleFile(this,'area5','doc5-status','flist5')" />
+            <div class="file-list" id="flist5"></div>
+          </div>
+
+          <div class="ribbon-card" style="padding:18px 18px 18px 26px;">
+            <div class="flex justify-between items-start wrap gap-12">
+              <div><h4 style="font-size:.9rem;margin-bottom:4px;">📎 Supporting Documents <span class="optional">(optional)</span></h4>
+                <p style="font-size:.8rem;color:var(--muted);">Awards, certificates, recommendation letters, or other supporting materials.</p></div>
+              <span class="badge badge-inactive" id="doc6-status">Optional</span>
+            </div>
+            <div class="file-upload-area mt-12" onclick="document.getElementById('doc6').click()" id="area6">
+              <div class="upload-icon">📤</div>
+              <p><strong>Click to upload</strong> or drag and drop</p>
+              <p style="font-size:.75rem;margin-top:4px;">PDF, JPG, PNG up to 5MB each · Multiple files allowed</p>
+            </div>
+            <input type="file" id="doc6" style="display:none;" accept=".pdf,.jpg,.jpeg,.png" multiple onchange="handleFile(this,'area6','doc6-status','flist6')" />
+            <div class="file-list" id="flist6"></div>
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-24">
+          <button class="btn btn-outline" onclick="goToStep(2)">← Back</button>
+          <button class="btn btn-primary" onclick="goToStep(4)">Next: Review & Submit →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: Review & Submit -->
+    <div id="step4" style="display:none;">
+      <div class="card mb-24">
+        <div class="card-header"><h2>Review & Submit Application</h2><span class="badge badge-gold">Step 4 of 4</span></div>
+        <div class="alert alert-warn mb-24">
+          <span class="alert-icon">⚠️</span>
+          <div>Once submitted, you cannot edit your application. Ensure all information is accurate before submitting.</div>
+        </div>
+
+        <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:16px;">
+          <h4 style="margin-bottom:12px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Selected Program</h4>
+          <div class="flex items-center gap-12">
+            <span style="font-size:1.4rem;">🏅</span>
+            <div><strong>Scholarship #1</strong><br><span style="font-size:.82rem;color:var(--muted);">₱25,000/year · 50 slots available · Deadline: July 31, 2025</span></div>
+          </div>
+        </div>
+
+        <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:16px;">
+          <h4 style="margin-bottom:12px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Personal Information</h4>
+          <div class="grid-2" style="gap:12px;">
+            <div><span style="font-size:.75rem;color:var(--muted);">Full Name</span><br><strong>Santos, Maria C.</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Date of Birth</span><br><strong>April 15, 2002</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Contact</span><br><strong>09123456789</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Email</span><br><strong>msantos@school.edu.ph</strong></div>
+          </div>
+        </div>
+
+        <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:16px;">
+          <h4 style="margin-bottom:12px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Academic Information</h4>
+          <div class="grid-2" style="gap:12px;">
+            <div><span style="font-size:.75rem;color:var(--muted);">Student ID</span><br><strong>2021-00123</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Year Level</span><br><strong>3rd Year</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Course</span><br><strong>BS Nursing</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">GPA / GWA</span><br><strong>1.45</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Term</span><br><strong>1st Sem, AY 2025–2026</strong></div>
+            <div><span style="font-size:.75rem;color:var(--muted);">Units</span><br><strong>21 units</strong></div>
+          </div>
+        </div>
+
+        <div style="background:var(--slate);border-radius:var(--radius);padding:20px;margin-bottom:24px;">
+          <h4 style="margin-bottom:12px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Uploaded Documents</h4>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="flex items-center gap-10"><span style="color:var(--success);">✓</span><span style="font-size:.875rem;">Certified True Copy of Grades</span><span class="badge badge-approved" style="margin-left:auto;">Uploaded</span></div>
+            <div class="flex items-center gap-10"><span style="color:var(--success);">✓</span><span style="font-size:.875rem;">Certificate of Enrollment</span><span class="badge badge-approved" style="margin-left:auto;">Uploaded</span></div>
+            <div class="flex items-center gap-10"><span style="color:var(--success);">✓</span><span style="font-size:.875rem;">Proof of Household Income</span><span class="badge badge-approved" style="margin-left:auto;">Uploaded</span></div>
+            <div class="flex items-center gap-10"><span style="color:var(--success);">✓</span><span style="font-size:.875rem;">Government-Issued ID</span><span class="badge badge-approved" style="margin-left:auto;">Uploaded</span></div>
+            <div class="flex items-center gap-10"><span style="color:var(--success);">✓</span><span style="font-size:.875rem;">2×2 ID Photo</span><span class="badge badge-approved" style="margin-left:auto;">Uploaded</span></div>
+          </div>
+        </div>
+
+        <hr class="divider" />
+        <h4 style="margin-bottom:16px;">Declaration & Certification</h4>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
+          <div class="check-group"><input type="checkbox" id="cert1" /><label for="cert1">I certify that all information provided in this application is true, complete, and accurate. I understand that any false statement may result in disqualification or termination of scholarship. <span class="required">*</span></label></div>
+          <div class="check-group"><input type="checkbox" id="cert2" /><label for="cert2">I consent to the verification of the information provided, including academic records and family background, by authorized school personnel. <span class="required">*</span></label></div>
+          <div class="check-group"><input type="checkbox" id="cert3" /><label for="cert3">I agree to comply with all scholarship terms, conditions, and renewal requirements throughout the duration of the scholarship. <span class="required">*</span></label></div>
+        </div>
+
+        <div class="flex justify-between">
+          <button class="btn btn-outline" onclick="goToStep(3)">← Back</button>
+          <button class="btn btn-gold btn-lg" onclick="submitApplication()">📤 Submit Application</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="modal-body text-center" style="padding:48px 32px;">
+      <div style="font-size:3rem;margin-bottom:16px;">🎉</div>
+      <h2 style="font-size:1.5rem;margin-bottom:8px;">Application Submitted!</h2>
+      <p style="color:var(--muted);margin-bottom:8px;">Your application has been successfully submitted for review.</p>
+      <div style="background:var(--slate);border-radius:var(--radius);padding:16px;margin:20px 0;">
+        <div style="font-size:.8rem;color:var(--muted);">Application Reference Number</div>
+        <div style="font-weight:700;font-size:1.2rem;font-family:monospace;color:var(--navy);">#APP-2025-00142</div>
+      </div>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:28px;">You will receive an email confirmation shortly. The review process takes 5–10 business days. Track your status on your dashboard.</p>
+      <a href="student-dashboard.html" class="btn btn-primary btn-lg w-full">Go to My Dashboard</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentStep = 1;
+  let selectedProgram = null;
+
+  function selectProgram(el) {
+    document.querySelectorAll('.program-option').forEach(o => o.style.borderColor = 'transparent');
+    el.style.borderColor = 'var(--navy)';
+    selectedProgram = el.dataset.id;
+    el.querySelector('input[type=radio]').checked = true;
+    document.getElementById('program-err').style.display = 'none';
+  }
+
+  function goToStep(n) {
+    if (n > currentStep) {
+      if (currentStep === 1 && !selectedProgram) {
+        document.getElementById('program-err').style.display = 'flex'; return;
+      }
+    }
+    document.getElementById('step' + currentStep).style.display = 'none';
+    currentStep = n;
+    document.getElementById('step' + n).style.display = 'block';
+    updateSteps();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateSteps() {
+    for (let i = 1; i <= 4; i++) {
+      const c = document.getElementById('sc'+i);
+      if (i < currentStep)       { c.className='step-circle done'; c.textContent='✓'; }
+      else if (i === currentStep){ c.className='step-circle active'; c.textContent=i; }
+      else                       { c.className='step-circle'; c.textContent=i; }
+    }
+    for (let i = 1; i <= 3; i++) {
+      const l = document.getElementById('sl'+i);
+      if (l) l.className = 'step-line' + (i < currentStep ? ' done' : '');
+    }
+  }
+
+  function handleFile(input, areaId, statusId, listId) {
+    const files = Array.from(input.files);
+    if (!files.length) return;
+    const statusEl = document.getElementById(statusId);
+    statusEl.className = 'badge badge-approved';
+    statusEl.textContent = files.length > 1 ? files.length + ' Files Uploaded' : 'Uploaded';
+    const area = document.getElementById(areaId);
+    area.style.borderColor = 'var(--success)';
+    area.style.background  = 'var(--success-bg)';
+    const list = document.getElementById(listId);
+    list.innerHTML = '';
+    files.forEach(f => {
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `<div class="file-name"><span>📎</span>${f.name} <span style="color:var(--muted);font-size:.75rem;">(${(f.size/1024).toFixed(1)} KB)</span></div><button class="remove-file" onclick="removeFile(this,'${areaId}','${statusId}','${listId}')">✕</button>`;
+      list.appendChild(item);
+    });
+  }
+
+  function removeFile(btn, areaId, statusId, listId) {
+    btn.closest('.file-item').remove();
+    if (!document.getElementById(listId).children.length) {
+      const s = document.getElementById(statusId);
+      s.className = 'badge badge-pending'; s.textContent = 'Not Uploaded';
+      const a = document.getElementById(areaId);
+      a.style.borderColor = ''; a.style.background = '';
+    }
+  }
+
+  function countWords(el) {
+    const words = el.value.trim().split(/\s+/).filter(w => w).length;
+    document.getElementById('word-count').textContent = words + ' words';
+    document.getElementById('word-count').style.color = words >= 100 ? 'var(--success)' : 'var(--muted)';
+  }
+
+  function submitApplication() {
+    const checks = ['cert1','cert2','cert3'];
+    if (!checks.every(id => document.getElementById(id).checked)) {
+      alert('Please confirm all declaration items before submitting.');
+      return;
+    }
+    document.getElementById('successModal').classList.add('open');
+  }
+</script>
+</body>
+</html>

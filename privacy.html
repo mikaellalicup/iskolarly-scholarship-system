@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Iskolarly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson:   #360D0E;
+      --red:       #5E0006;
+      --gold:      #EBB11F;
+      --cream:     #F3CC9F;
+      --white:     #FCFFFD;
+      --off-white: #F4F7F5;
+      --light:     #E4EAF4;
+      --ink:       #222222;
+      --muted:     #888888;
+      --border:    #CBD5E0;
+    }
+
+    body {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      background-color: var(--off-white);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Navbar ── */
+    .navbar {
+      background: var(--crimson);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .navbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .brand-icon {
+      width: 36px; height: 36px;
+      background: var(--red);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ── Main content ── */
+    main {
+      flex: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 48px 24px 72px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--red);
+      font-weight: 600;
+      font-size: .875rem;
+      margin-bottom: 32px;
+      padding: 8px 16px;
+      border: 1.5px solid var(--red);
+      border-radius: 8px;
+      background: transparent;
+      transition: background .18s, color .18s;
+    }
+    .back-btn:hover {
+      background: var(--red);
+      color: var(--white);
+    }
+    .back-btn svg { flex-shrink: 0; }
+
+    .page-header {
+      margin-bottom: 40px;
+    }
+    .page-eyebrow {
+      display: inline-block;
+      background: rgba(201,168,76,.15);
+      color: #B45309;
+      border: 1px solid rgba(201,168,76,.3);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 8px;
+      margin-bottom: 14px;
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--crimson);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .page-header p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+
+    .policy-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .policy-number {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      background: var(--crimson);
+      color: var(--white);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    .policy-text {
+      font-size: .925rem;
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--crimson);
+      color: var(--white);
+    }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.55);
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-bottom a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .footer-bottom a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ── -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/>
+          <path d="M22 10v6"/>
+          <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/>
+        </svg>
+      </div>
+      <span>Iskolarly</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ── Content ── -->
+<main>
+
+  <a href="index.html" class="back-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+    </svg>
+    Back to Home
+  </a>
+
+  <div class="page-header">
+    <div class="page-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: June 2026 &nbsp;·&nbsp; Effective for all Iskolarly users</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <div class="policy-number">1</div>
+    <p class="policy-text">When you sign up, we collect your name, birthday, contact number, email, address, student ID, course, year level, GPA, family background, and income details. We also collect documents you upload and basic session info like your device and browser.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-number">2</div>
+    <p class="policy-text">We use your information to process your scholarship application, verify eligibility, send you updates and reminders, and let authorized officers review your documents.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-number">3</div>
+    <p class="policy-text">Only you and authorized Iskolarly admins can see your data. We don't sell it or share it with anyone outside the platform, except when the law requires it.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-number">4</div>
+    <p class="policy-text">Your password is encrypted and never stored as plain text. We take reasonable steps to keep your account and data secure. Keep your login credentials private.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-number">5</div>
+    <p class="policy-text">You have the right to view, correct, or request deletion of your data under the Data Privacy Act of 2012 (RA 10173). Contact us through the platform to do so.</p>
+  </div>
+
+  <div class="policy-section">
+    <div class="policy-number">6</div>
+    <p class="policy-text">We may update this policy from time to time. Continued use of Iskolarly means you accept any changes.</p>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 Iskolarly. All rights reserved. Built for AY 2026–2027.</span>
+    <div style="display:flex;gap:16px;">
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

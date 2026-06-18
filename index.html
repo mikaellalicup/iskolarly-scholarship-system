@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Iskolarly — A comprehensive Scholar Management System for academic institutions." />
+  <title>Iskolarly | Scholar Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="" class="navbar-brand">
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <div class="brand-text">
+        Iskolarly
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class=>Home</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="login.html">Log In</a></li>
+      <li><a href="register.html" class="nav-cta">Apply Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────── -->
+<section class="page-hero hero-landing">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">Scholarship Management System</div>
+      <h1>Your Future, <em>Funded.</em><br>Apply with Confidence.</h1>
+      <p style="color:rgba(255,255,255,.72);font-size:1.1rem;max-width:520px;line-height:1.7;">
+        Iskolarly is a centralized scholarship management platform connecting deserving students with financial support all in one place.
+      </p>
+      <div class="hero-actions">
+        <a href="register.html" class="btn btn-gold btn-lg">Create an Account</a>
+        <a href="login.html" class="btn btn-outline-white btn-lg">Student Login</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="num" id="stat-scholars">—</span><span class="lbl">Active Scholars</span></div>
+        <div class="hero-stat"><span class="num" id="stat-funds">—</span><span class="lbl">Funds Distributed</span></div>
+        <div class="hero-stat"><span class="num" id="stat-satisfaction">—</span><span class="lbl">Satisfaction Rate</span></div>
+        <div class="hero-stat"><span class="num" id="stat-institutions">—</span><span class="lbl">Partner Institutions</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Announcement Banner ────────────────────────────── -->
+<div style="background:var(--warn-bg);border-bottom:1px solid #F5C06A;padding:12px 0;">
+  <div class="container flex items-center gap-16 justify-between wrap">
+    <div class="flex items-center gap-12">
+      <span style="font-size:1.1rem;">📢</span>
+      <p style="font-size:.875rem;color:#7A4A04;font-weight:500;">
+        <strong>AY 2025–2026 Scholarship Applications</strong> are now open. Deadline: <strong>July 31, 2025</strong>.
+      </p>
+    </div>
+    <a href="register.html" class="btn btn-sm" style="background:var(--warn);color:var(--white);border-color:var(--warn);">Apply Now →</a>
+  </div>
+</div>
+
+<!-- ── How It Works ───────────────────────────────────── -->
+<section id="how-it-works" style="padding:80px 0;">
+  <div class="container">
+    <div class="text-center mb-48">
+      <div class="eyebrow" style="display:inline-block;background:rgba(201,168,76,.15);color:#B45309;border: 1px solid rgba(201,168,76,.3);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:12px;margin-bottom:12px;">Process Overview</div>
+      <h2 style="font-size:2rem;margin-bottom:10px;">From Application to Approval</h2>
+      <p class="text-muted" style="max-width:520px;margin:0 auto;">A transparent, step-by-step process designed for students and administrators alike.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+      <!-- Step cards -->
+      <div class="ribbon-card" style="padding:28px 28px 28px 36px;">
+        <div style="font-size:1.8rem;margin-bottom:14px;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EBB11F" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-notebook-pen-icon lucide-notebook-pen"><path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"/><path d="M2 6h4"/><path d="M2 10h4"/><path d="M2 14h4"/><path d="M2 18h4"/><path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Step 01</div>
+        <h4 style="margin-bottom:8px;">Register & Create Account</h4>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.6;">Sign up with your personal details and verify your student status to access the portal.</p>
+      </div>
+      <div class="ribbon-card" style="padding:28px 28px 28px 36px;">
+        <div style="font-size:1.8rem;margin-bottom:14px;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EBB11F" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list-icon lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Step 02</div>
+        <h4 style="margin-bottom:8px;">Fill Out Application</h4>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.6;">Complete the scholarship application form and upload required documents securely.</p>
+      </div>
+      <div class="ribbon-card" style="padding:28px 28px 28px 36px;">
+        <div style="font-size:1.8rem;margin-bottom:14px;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EBB11F" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg></div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Step 03</div>
+        <h4 style="margin-bottom:8px;">Admin Review & Evaluation</h4>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.6;">Our team reviews your documents and evaluates eligibility based on set scholarship criteria.</p>
+      </div>
+      <div class="ribbon-card" style="padding:28px 28px 28px 36px;">
+        <div style="font-size:1.8rem;margin-bottom:14px;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#EBB11F" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg></div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Step 04</div>
+        <h4 style="margin-bottom:8px;">Receive Decision & Onboarding</h4>
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.6;">Get notified of your result. Approved scholars are onboarded into the scholars' database.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ───────────────────────────────────────── -->
+<section style="padding:80px 0; background-color: #360D0E;">
+  <div class="container">
+    <div class="grid-2" style="gap:60px;align-items:center;">
+      <div>
+        <div style="display:inline-block;background:rgba(201,168,76,.15);border: 1px solid rgba(201,168,76,.3);color:var(--gold2);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:12px;margin-bottom:16px;">Why Iskolarly</div>
+        <h2 style="color:#FCFFFD;font-size:1.9rem;margin-bottom:16px;">Everything You Need, In One System</h2>
+        <p style="color:#CABBBB;line-height:1.7;margin-bottom:28px;">We built Iskolarly to eliminate paperwork chaos, reduce manual errors, and give every stakeholder real-time visibility into the scholarship pipeline.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="flex items-start gap-16">
+            <div style="width:40px;height:40px;background:rgba(255, 121, 121, 0.273);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock-keyhole-icon lucide-lock-keyhole"><circle cx="12" cy="16" r="1"/><rect x="3" y="10" width="18" height="12" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg></div>
+            <div><h4 style="color:#FCFFFD;margin-bottom:4px;">Secure Document Uploads</h4><p style="font-size:.85rem;color:#CABBBB;">All documents are securely uploaded and stored. Only authorized personnel can view sensitive files.</p></div>
+          </div>
+          <div class="flex items-start gap-16">
+            <div style="width:40px;height:40px;background:rgba(255, 121, 121, 0.273);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-check-icon lucide-bell-check"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="m15 8 2 2 4-4"/><path d="M16.8607 4.4824A6 6 0 0 0 6 8C6 12.499 4.589 13.956 3.262 15.326"/><path d="M3.262 15.326A1 1 0 0 0 4 17H20A1 1 0 0 0 20.74 15.327C20.209 14.779 19.665 14.218 19.203 13.454"/></svg></div>
+            <div><h4 style="color:#FCFFFD;margin-bottom:4px;">Real-Time Notifications</h4><p style="font-size:.85rem;color:#CABBBB;">Applicants receive immediate updates on every stage of their application via the portal and email.</p></div>
+          </div>
+          <div class="flex items-start gap-16">
+            <div style="width:40px;height:40px;background:rgba(255, 121, 121, 0.273);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-chart-column-increasing-icon lucide-file-chart-column-increasing"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M8 18v-2"/><path d="M12 18v-4"/><path d="M16 18v-6"/></svg></div>
+            <div><h4 style="color:#FCFFFD;margin-bottom:4px;">Analytics & Reports</h4><p style="font-size:.85rem;color:#CABBBB;">Administrators gain full visibility with dashboards, fund tracking, and exportable data reports.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div class="stat-card">
+          <div class="card-icon gold" style="background:rgba(255, 206, 81, 0.25);width:48px;height:48px;font-size:1.3rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FFDAA3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-check-icon lucide-folder-check"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="m9 13 2 2 4-4"/></svg></div>
+          <div><div class="stat-value">3,891</div><div class="stat-label">Applications Processed</div><div class="stat-change up">↑ 18% this year</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="card-icon green" style="background:rgba(84, 248, 29, 0.25);width:48px;height:48px;font-size:1.3rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#DCF7DD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-star-icon lucide-user-star"><path d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"/><path d="M8 15H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/></svg></div>
+          <div><div class="stat-value">1,240</div><div class="stat-label">Active Scholars</div><div class="stat-change up">↑ 9% from last term</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="card-icon navy" style="background:rgba(29, 80, 248, 0.25);width:48px;height:48px;font-size:1.3rem;flex-shrink:0;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#DDE5FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass-icon lucide-hourglass"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></div>
+          <div><div class="stat-value">2.4 days</div><div class="stat-label">Average Review Time</div><div class="stat-change up">↓ 40% faster</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ────────────────────────────────────────────── -->
+<section style="padding:80px 0;" id="contact">
+  <div class="container-md">
+    <div class="text-center mb-48">
+      <h2 style="font-size:2rem;margin-bottom:8px;">Frequently Asked Questions</h2>
+      <p class="text-muted">Everything you need to know about applying through Iskolarly.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;" id="faq-list">
+      <!-- FAQ items -->
+      <div class="faq-item card card-sm" style="cursor:pointer;">
+        <div class="flex justify-between items-center" onclick="toggleFaq(this)">
+          <h4 style="font-size:.9rem;">Who is eligible to apply for a scholarship?</h4>
+          <span class="faq-icon" style="font-size:1.2rem;color:var(--muted);">+</span>
+        </div>
+        <div class="faq-answer" style="display:none;margin-top:12px;font-size:.875rem;color:var(--muted);line-height:1.7;">Eligibility varies per scholarship program. Generally, applicants must be currently enrolled students in good academic standing. Check each scholarship's specific criteria after logging in.</div>
+      </div>
+      <div class="faq-item card card-sm" style="cursor:pointer;">
+        <div class="flex justify-between items-center" onclick="toggleFaq(this)">
+          <h4 style="font-size:.9rem;">What documents are required for application?</h4>
+          <span class="faq-icon" style="font-size:1.2rem;color:var(--muted);">+</span>
+        </div>
+        <div class="faq-answer" style="display:none;margin-top:12px;font-size:.875rem;color:var(--muted);line-height:1.7;">Typical requirements include: certified true copy of grades, proof of enrollment, proof of household income (if need-based), government-issued ID, and a personal essay. Additional documents may be required per program.</div>
+      </div>
+      <div class="faq-item card card-sm" style="cursor:pointer;">
+        <div class="flex justify-between items-center" onclick="toggleFaq(this)">
+          <h4 style="font-size:.9rem;">How long does the application process take?</h4>
+          <span class="faq-icon" style="font-size:1.2rem;color:var(--muted);">+</span>
+        </div>
+        <div class="faq-answer" style="display:none;margin-top:12px;font-size:.875rem;color:var(--muted);line-height:1.7;">After submission, the review process typically takes 5–10 business days. You will receive a notification through the portal and your registered email once a decision has been made.</div>
+      </div>
+      <div class="faq-item card card-sm" style="cursor:pointer;">
+        <div class="flex justify-between items-center" onclick="toggleFaq(this)">
+          <h4 style="font-size:.9rem;">Can I apply for multiple scholarships?</h4>
+          <span class="faq-icon" style="font-size:1.2rem;color:var(--muted);">+</span>
+        </div>
+        <div class="faq-answer" style="display:none;margin-top:12px;font-size:.875rem;color:var(--muted);line-height:1.7;">Yes, you may apply to multiple programs as long as you meet the individual eligibility criteria. However, note that some scholarships may restrict concurrent grants — always read the program guidelines carefully.</div>
+      </div>
+      <div class="faq-item card card-sm" style="cursor:pointer;">
+        <div class="flex justify-between items-center" onclick="toggleFaq(this)">
+          <h4 style="font-size:.9rem;">How do I renew my scholarship?</h4>
+          <span class="faq-icon" style="font-size:1.2rem;color:var(--muted);">+</span>
+        </div>
+        <div class="faq-answer" style="display:none;margin-top:12px;font-size:.875rem;color:var(--muted);line-height:1.7;">Current scholars can submit renewal requirements through their student dashboard. Log in, go to "Renewal & Compliance," upload updated documents (grades, enrollment certificate), and submit before the term deadline.</div>
+      </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg> Iskolarly</div>
+        <p class="footer-desc">A centralized Scholar Management System empowering students and administrators with a seamless, transparent scholarship experience.</p>
+      </div>
+      <div>
+        <h4>Developers</h4>
+        <ul>
+          <li>Antonette Formento</li>
+          <li>Mikaella Jezel Licup</li>
+          <li>Savina Lilagan</li>
+          <li>John Gabriel Palomo</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Student Login</a></li>
+          <li><a href="admin-login.html">Admin Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Scholarship Guidelines</a></li>
+          <li><a href="#">Document Checklist</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Iskolarly. All rights reserved. Built for AY 2026–2027.</span>
+      <div class="flex gap-16">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Hero stats ───────────────────────────────────────────
+  async function loadStats() {
+    try {
+      const res  = await fetch('/api/public/stats');
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      // Expected shape: { scholars: 120, funds: "₱2.4M", satisfaction: "98%", institutions: 5 }
+      document.getElementById('stat-scholars').textContent     = data.scholars     ?? '—';
+      document.getElementById('stat-funds').textContent        = data.funds        ?? '—';
+      document.getElementById('stat-satisfaction').textContent = data.satisfaction ?? '—';
+      document.getElementById('stat-institutions').textContent = data.institutions ?? '—';
+    } catch {
+      // Leave the — placeholders in place on failure; stats are non-critical
+    }
+  }
+  loadStats();
+  function toggleFaq(el) {
+    const answer = el.parentElement.querySelector('.faq-answer');
+    const icon   = el.querySelector('.faq-icon');
+    const open   = answer.style.display === 'block';
+    // Close all
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+    if (!open) {
+      answer.style.display = 'block';
+      icon.textContent = '−';
+    }
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>

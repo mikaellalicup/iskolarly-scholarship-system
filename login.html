@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Login | Iskolarly</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body style="background:var(--slate);min-height:100vh;">
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="" class="navbar-brand">
+      <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap-icon lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
+      <div class="brand-text">Iskolarly</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">← Back to Home</a></li>
+      <li><a href="admin-login.html">Admin Portal</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 1fr;">
+
+  <!-- Left Panel -->
+  <div style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:64px 56px;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:rgba(201,168,76,.1);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-60px;left:20%;width:180px;height:180px;background:rgba(201,168,76,.06);border-radius:50%;"></div>
+    <div style="font-size:3rem;margin-bottom:24px;position:relative;z-index:1;"></div>
+    <h2 style="color:var(--white);font-size:2rem;margin-bottom:14px;position:relative;z-index:1;">Welcome Back, Scholar.</h2>
+    <p style="color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.7;max-width:360px;margin-bottom:40px;position:relative;z-index:1;">Access your application dashboard, track your scholarship status, and manage your academic records.</p>
+    <div style="display:flex;flex-direction:column;gap:16px;position:relative;z-index:1;">
+      <div class="flex items-center gap-12"><div style="width:32px;height:32px;background:rgba(201,168,76,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-check-icon lucide-clipboard-check"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div><span style="color:rgba(255,255,255,.75);font-size:.875rem;">Track your application in real-time</span></div>
+      <div class="flex items-center gap-12"><div style="width:32px;height:32px;background:rgba(201,168,76,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-pen-icon lucide-folder-pen"><path d="M2 11.5V5a2 2 0 0 1 2-2h3.9c.7 0 1.3.3 1.7.9l.8 1.2c.4.6 1 .9 1.7.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5"/><path d="M11.378 13.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"/></svg></div><span style="color:rgba(255,255,255,.75);font-size:.875rem;">Upload and manage required documents</span></div>
+      <div class="flex items-center gap-12"><div style="width:32px;height:32px;background:rgba(201,168,76,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell-ring-icon lucide-bell-ring"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/></svg></div><span style="color:rgba(255,255,255,.75);font-size:.875rem;">Receive instant status notifications</span></div>
+      <div class="flex items-center gap-12"><div style="width:32px;height:32px;background:rgba(201,168,76,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FCFFFD" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></div><span style="color:rgba(255,255,255,.75);font-size:.875rem;">Submit renewal requirements easily</span></div>
+    </div>
+  </div>
+
+  <!-- Right Panel (Form) -->
+  <div style="display:flex;align-items:center;justify-content:center;padding:48px 40px;background:var(--slate);">
+    <div style="width:100%;max-width:420px;">
+      <h1 style="font-size:1.7rem;margin-bottom:6px;">Student Login</h1>
+      <p class="text-muted mb-32">Sign in to access your scholarship dashboard.</p>
+
+      <div class="alert alert-info mb-24" id="login-error" style="display:none;">
+        <span class="alert-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#222222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert-icon lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span>
+        <div id="login-error-msg">Invalid username or password. Please try again.</div>
+      </div>
+
+      <div class="form-group">
+        <label>Username or Email <span class="required">*</span></label>
+        <input type="text" class="form-control" id="l-user" placeholder="Enter your username or email" />
+      </div>
+      <div class="form-group">
+        <label>Password <span class="required">*</span></label>
+        <div style="position:relative;">
+          <input type="password" class="form-control" id="l-pass" placeholder="Enter your password" style="padding-right:44px;" />
+          <button type="button" onclick="togglePass('l-pass')" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);display:flex;align-items:center;">
+            <iconify-icon id="l-pass-icon" icon="mingcute:eye-close-line" style="font-size:1.1rem;"></iconify-icon>
+          </button>
+        </div>
+        <div class="flex justify-between mt-8">
+          <div class="check-group">
+            <input type="checkbox" id="remember" />
+            <label for="remember" style="font-weight:400;font-size:.82rem;">Remember me</label>
+          </div>
+          <a href="forgot-password.html" style="font-size:.82rem;color:var(--navy);font-weight:600;">Forgot Password?</a>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-lg w-full mt-8" onclick="doLogin()" id="login-btn">Log In to My Account</button>
+
+      <div style="display:flex;align-items:center;gap:12px;margin:24px 0;">
+        <hr style="flex:1;border:none;border-top:1px solid var(--border);" />
+        <span style="font-size:.8rem;color:var(--muted);">or</span>
+        <hr style="flex:1;border:none;border-top:1px solid var(--border);" />
+      </div>
+
+      <div class="text-center">
+        <p class="text-muted text-sm mb-8">Don't have an account yet?</p>
+        <a href="register.html" class="btn btn-outline w-full">Create an Account</a>
+      </div>
+
+      <hr class="divider" />
+      <div class="text-center">
+        <p style="font-size:.8rem;color:var(--muted);">Are you an Administrator?</p>
+        <a href="admin-login.html" class="btn btn-sm mt-8" style="color:var(--navy);text-decoration:underline;background:none;border:none;padding:0;font-size:.85rem;font-weight:600;">Go to Admin Portal →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toast-container"></div>
+
+<script>
+  function togglePass(id) {
+    const el = document.getElementById(id);
+    el.type = el.type === 'password' ? 'text' : 'password';
+    const icon = document.getElementById(id + '-icon');
+    if (icon) {
+      icon.setAttribute('icon', el.type === 'password' ? 'mingcute:eye-close-line' : 'mingcute:eye-line');
+    }
+  }
+
+  function showError(msg) {
+    document.getElementById('login-error-msg').textContent = msg;
+    document.getElementById('login-error').style.display = 'flex';
+  }
+
+  function hideError() {
+    document.getElementById('login-error').style.display = 'none';
+  }
+
+  async function doLogin() {
+    hideError();
+    const username    = document.getElementById('l-user').value.trim();
+    const password    = document.getElementById('l-pass').value;
+    const remember_me = document.getElementById('remember').checked;
+    const btn         = document.getElementById('login-btn');
+
+    if (!username || !password) {
+      showError('Please fill in all required fields.');
+      return;
+    }
+
+    btn.textContent = 'Logging in…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password, remember_me })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        showError(data.message || 'Invalid username or password. Please try again.');
+        return;
+      }
+
+      window.location.href = 'student-dashboard.html';
+
+    } catch {
+      showError('Unable to reach the server. Please try again later.');
+    } finally {
+      btn.textContent = 'Log In to My Account';
+      btn.disabled = false;
+    }
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+</script>
+</body>
+</html>
