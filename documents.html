@@ -200,7 +200,7 @@
     fd.append('academic_term', term);
     fd.append('file', file);
     try {
-      const res = await fetch('/api/documents/upload', { method: 'POST', body: fd });
+      const res = await fetch('/api/index.php/documents/upload', { method: 'POST', body: fd });
       if (!res.ok) throw new Error();
       showToast('Document uploaded successfully!', 'success');
       clearNewDoc();
@@ -213,12 +213,12 @@
 
   // GET /api/documents/:id/view
   function viewDoc(docId) {
-    window.open(`/api/documents/${docId}/view`, '_blank');
+    window.open(`/api/index.php/documents/${docId}/view`, '_blank');
   }
 
   // GET /api/documents/:id/download
   function downloadDoc(docId) {
-    window.location.href = `/api/documents/${docId}/download`;
+    window.location.href = `/api/index.php/documents/${docId}/download`;
   }
 
   // POST /api/documents/:id/replace  (multipart/form-data)
@@ -232,7 +232,7 @@
       const fd = new FormData();
       fd.append('file', file);
       try {
-        const res = await fetch(`/api/documents/${docId}/replace`, { method: 'POST', body: fd });
+        const res = await fetch(`/api/index.php/documents/${docId}/replace`, { method: 'POST', body: fd });
         if (!res.ok) throw new Error();
         showToast('Document replaced successfully!', 'success');
       } catch {

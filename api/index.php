@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $request_uri = $_SERVER['REQUEST_URI'];
 $request_uri = strtok($request_uri, '?');
 $request_uri = rtrim($request_uri, '/');
+$request_uri = str_replace('/index.php', '', $request_uri);
 
 // Map API routes to files
 $routes = [
