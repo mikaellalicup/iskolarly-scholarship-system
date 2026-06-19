@@ -6,7 +6,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 
 // Validate required fields
 $required = ['first_name', 'last_name', 'email', 'username', 'password', 'date_of_birth', 
-             'sex', 'contact_number', 'student_id', 'year_level', 'college', 'degree_program'];
+             'sex', 'contact_number'];
 foreach ($required as $field) {
     if (!isset($data[$field]) || empty($data[$field])) {
         sendError("$field is required");
@@ -16,17 +16,17 @@ foreach ($required as $field) {
 // Sanitize inputs
 $first_name = sanitize($data['first_name']);
 $last_name = sanitize($data['last_name']);
-$middle_name = isset($data['middle_name']) ? sanitize($data['middle_name']) : null;
+$middle_name = isset($data['middle_name']) && !empty(trim($data['middle_name'])) ? sanitize($data['middle_name']) : null;
 $email = sanitize($data['email']);
 $username = sanitize($data['username']);
 $password = $data['password'];
 $date_of_birth = $data['date_of_birth'];
 $sex = $data['sex'];
 $contact_number = $data['contact_number'];
-$student_id = sanitize($data['student_id']);
-$year_level = $data['year_level'];
-$college = sanitize($data['college']);
-$degree_program = sanitize($data['degree_program']);
+$student_id = isset($data['student_id']) && !empty(trim($data['student_id'])) ? sanitize($data['student_id']) : null;
+$year_level = isset($data['year_level']) && !empty(trim($data['year_level'])) ? sanitize($data['year_level']) : null;
+$college = isset($data['college']) && !empty(trim($data['college'])) ? sanitize($data['college']) : null;
+$degree_program = isset($data['degree_program']) && !empty(trim($data['degree_program'])) ? sanitize($data['degree_program']) : null;
 
 // Validate email
 if (!isValidEmail($email)) {
@@ -67,10 +67,12 @@ if ($stmt->fetch()) {
 }
 
 // Check if student ID exists
-$stmt = $pdo->prepare("SELECT profile_id FROM student_profiles WHERE student_id = ?");
-$stmt->execute([$student_id]);
-if ($stmt->fetch()) {
-    sendError('Student ID already registered');
+if ($student_id !== null) {
+    $stmt = $pdo->prepare("SELECT profile_id FROM student_profiles WHERE student_id = ?");
+    $stmt->execute([$student_id]);
+    if ($stmt->fetch()) {
+        sendError('Student ID already registered');
+    }
 }
 
 try {

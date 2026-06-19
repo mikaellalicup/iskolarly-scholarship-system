@@ -22,6 +22,7 @@ $request_uri = rtrim($request_uri, '/');
 // Map API routes to files
 $routes = [
     '/api/auth/login' => 'api/auth/login.php',
+    '/api/admin/login' => 'api/auth/admin-login.php',
     '/api/auth/register' => 'api/auth/register.php',
     '/api/auth/logout' => 'api/auth/logout.php',
     '/api/auth/check-session' => 'api/auth/check-session.php',
@@ -38,8 +39,9 @@ if (isset($routes[$request_uri])) {
     exit;
 }
 
-// Serve HTML files if they exist
-if (file_exists($request_uri)) {
+// Serve HTML/CSS/JS files if they exist in the project directory
+$file_path = ltrim($request_uri, '/');
+if (!empty($file_path) && file_exists($file_path) && !is_dir($file_path)) {
     return false; // Let the server serve the file
 }
 

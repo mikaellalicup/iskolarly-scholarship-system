@@ -116,7 +116,12 @@
       }
 
       showToast('Login successful! Redirecting…', 'success');
-      setTimeout(() => { window.location.href = 'admin-dashboard.html'; }, 1000);
+      
+      let redirectUrl = 'admin-dashboard.html';
+      if (data.data && data.data.user_type === 'super_admin') {
+        redirectUrl = 'superadmin-dashboard.html';
+      }
+      setTimeout(() => { window.location.href = redirectUrl; }, 1000);
 
     } catch {
       showError('Unable to connect to the server. Please try again later.');

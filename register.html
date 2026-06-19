@@ -814,9 +814,56 @@
     if (e.target === this) closeLegalModal('terms');
   });
 
-  function submitRegistration() {
+  async function submitRegistration() {
     if (!validateStep(2)) return;
-    document.getElementById('successModal').style.display = 'flex';
+
+    const btn = document.querySelector('button[onclick="submitRegistration()"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Processing...';
+    btn.disabled = true;
+
+    // Build the address components
+    const street = document.getElementById('r-addr-street').value.trim();
+    const barangay = document.getElementById('r-addr-barangay').value.trim();
+    const municipality = document.getElementById('r-addr-municipality').value.trim();
+    const province = document.getElementById('r-addr-province').value.trim();
+    const zip = document.getElementById('r-addr-zip').value.trim();
+    const fullAddress = [street, barangay, municipality, province, zip].filter(Boolean).join(', ');
+
+    const payload = {
+      first_name: document.getElementById('r-firstname').value.trim(),
+      last_name: document.getElementById('r-lastname').value.trim(),
+      middle_name: document.getElementById('r-middlename').value.trim(),
+      date_of_birth: document.getElementById('r-dob').value,
+      sex: document.getElementById('r-sex').value,
+      contact_number: document.getElementById('r-phone').value.replace(/\D/g, ''),
+      email: document.getElementById('r-email').value.trim(),
+      permanent_address: fullAddress,
+      username: document.getElementById('r-username').value.trim(),
+      password: document.getElementById('r-password').value
+    };
+
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.error || 'Registration failed. Please check your inputs and try again.');
+        return;
+      }
+
+      document.getElementById('successModal').style.display = 'flex';
+    } catch (err) {
+      alert('Unable to connect to the server. Please try again later.');
+    } finally {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
   }
 </script>
 </body>
