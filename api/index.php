@@ -20,18 +20,18 @@ $request_uri = strtok($request_uri, '?');
 $request_uri = rtrim($request_uri, '/');
 $request_uri = str_replace('/index.php', '', $request_uri);
 
-// Map API routes to files
+// Map API routes to files using absolute paths relative to this directory (__DIR__)
 $routes = [
-    '/api/auth/login' => 'api/auth/login.php',
-    '/api/admin/login' => 'api/auth/admin-login.php',
-    '/api/auth/register' => 'api/auth/register.php',
-    '/api/auth/logout' => 'api/auth/logout.php',
-    '/api/auth/check-session' => 'api/auth/check-session.php',
-    '/api/applications/list' => 'api/applications/list.php',
-    '/api/documents/upload' => 'api/documents/upload.php',
-    '/api/notifications/fetch' => 'api/notifications/fetch.php',
-    '/api/notifications/mark-read' => 'api/notifications/mark-read.php',
-    '/api/public/stats' => 'api/public/stats.php',
+    '/api/auth/login' => __DIR__ . '/auth/login.php',
+    '/api/admin/login' => __DIR__ . '/auth/admin-login.php',
+    '/api/auth/register' => __DIR__ . '/auth/register.php',
+    '/api/auth/logout' => __DIR__ . '/auth/logout.php',
+    '/api/auth/check-session' => __DIR__ . '/auth/check-session.php',
+    '/api/applications/list' => __DIR__ . '/applications/list.php',
+    '/api/documents/upload' => __DIR__ . '/documents/upload.php',
+    '/api/notifications/fetch' => __DIR__ . '/notifications/fetch.php',
+    '/api/notifications/mark-read' => __DIR__ . '/notifications/mark-read.php',
+    '/api/public/stats' => __DIR__ . '/public/stats.php',
 ];
 
 // Check if route exists
@@ -40,12 +40,14 @@ if (isset($routes[$request_uri])) {
     exit;
 }
 
-// Serve HTML/CSS/JS files if they exist in the project directory
+// Serve HTML/CSS/JS files if they exist in the project directory relative to the project root
 $file_path = ltrim($request_uri, '/');
-if (!empty($file_path) && file_exists($file_path) && !is_dir($file_path)) {
+$root_dir = dirname(__DIR__);
+$absolute_file_path = $root_dir . '/' . $file_path;
+if (!empty($file_path) && file_exists($absolute_file_path) && !is_dir($absolute_file_path)) {
     return false; // Let the server serve the file
 }
 
-// Default to index.html
-require_once 'index.html';
+// Default to index.html in the project root
+require_once $root_dir . '/index.html';
 ?>
